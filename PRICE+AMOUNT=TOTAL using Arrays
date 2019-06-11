@@ -1,0 +1,25 @@
+#include<iostream>
+
+using namespace std;
+
+main(){
+	const int MAX = 10;
+	
+	int total[MAX];
+	int price[MAX];
+	int amount[MAX];
+	
+	cout<<"Enter the amount and price: "<<endl;
+	 
+	for(int i=0; i<MAX; i++){
+		cout<<"\nPrice["<<i<<"] = ";
+		cin>>price[i];
+		cout<<"\nAmount["<<i<<"] = ";
+		cin>>amount[i];
+		total[i] = price[i] * amount[i];
+		cout<<"\nTotal["<<i<<"] = "<<total[i]<<endl;
+		cout<<"\n\n";
+	}	
+	
+	system("pause");
+}
