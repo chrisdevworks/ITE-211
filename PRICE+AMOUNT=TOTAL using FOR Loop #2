@@ -1,0 +1,31 @@
+#include<iostream>
+
+using namespace std;
+
+main(){
+	const int MAX = 10;
+	
+	int total[MAX];
+	int price[MAX];
+	int amount[MAX];
+	
+	cout<<"Enter the amount and price: "<<endl;
+	
+	for(int i=0; i<MAX; i++){
+		cout<<"\n#### Product "<<i+1<<" ####";
+		cout<<"\nPrice["<<i<<"] = ";
+		cin>>price[i];
+		cout<<"Amount["<<i<<"] = ";
+		cin>>amount[i];
+	}
+	
+	cout<<"\n";
+	 
+	for(int i=0; i<MAX; i++){
+		total[i] = price[i] * amount[i];
+		cout<<"Total["<<i<<"] = "<<total[i]<<endl;
+		//cout<<"\n";
+	}	
+	
+	system("pause");
+}
