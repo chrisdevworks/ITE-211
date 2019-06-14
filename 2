@@ -1,0 +1,50 @@
+/**
+ * @(#)HelloWorld.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/6/14
+ */
+import java.util.Scanner;
+
+public class HelloWorld {
+	
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		
+		
+		double Weight;
+		double Height;
+		double BMI;
+	
+		System.out.print("Please Input your Weight(kg): ");
+		Weight=input.nextDouble();
+		
+		System.out.print("\nPlease Input your Height(m): ");
+		Height=input.nextDouble();
+		
+		BMI=Weight/(Height*Height);
+		
+		if(BMI < 18.5){
+			System.out.printf("\nYour BMI is %f\n", BMI);
+			System.out.print("\nYou are underweight. You need to a lot eat more.\n");
+		}
+		else if (BMI>=18.5 && BMI<=24.9){
+			System.out.printf("\nYour BMI is %f\n", BMI);
+			System.out.print("\nCongrats! You have a normal weight!\n");
+		}
+		else if (BMI>=25 && BMI<=29.9){
+			System.out.printf("\nYour BMI is %f\n", BMI);
+			System.out.print("\nYou are overweight. You might need to lose some.\n");
+		}
+		
+		else if (BMI > 30){
+			System.out.printf("\nYour BMI is %f\n", BMI);
+			System.out.print("\nYou are obese. Please prescribe your doctor.\n");
+		}
+		else {
+			System.out.print("\n\nPlease Input a Number");
+		}
+		
+    }
+}
