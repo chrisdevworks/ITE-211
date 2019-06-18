@@ -1,0 +1,27 @@
+public class GradeBook {
+    // public void displayMessage(String courseName) {
+    //	System.out.printf("Welcome to your GradeBook for %s", courseName);
+    //	
+    // }
+    
+    //Constructor
+    private String getInquiry; 
+    
+    //Declare Variable
+    public void getInquiry(String name){
+    	courseName = name;
+    }
+    
+    //Return Value
+    public String getDeposit(){
+    	return courseName;
+    }
+    
+    //DISPLAY
+    public void getWithdraw(){
+    	System.out.printf("Welcome to the GradeBook for the %s!", getCourseName());
+    }
+     
+    
+}
+
