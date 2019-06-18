@@ -1,0 +1,36 @@
+/**
+ * @(#)GradeBookTest.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/6/18
+ */
+
+import java.util.Scanner;
+
+public class GradeBookTest {
+
+    public static void main(String[] args) {
+    	//GradeBook myGradeBook = new GradeBook();
+    	//myGradeBook.displayMessage();
+    	
+    	Scanner input = new Scanner(System.in);
+    	
+    	System.out.print("Please Select Inquiry");
+    	
+    	ProjectATM myATM = new ProjectATM();
+    	
+    	
+    		
+    	String courseName = input.nextInt();
+    	
+    	System.out.println();
+    	
+    	myGradeBook.setCourseName(courseName);
+    	
+    	System.out.println();
+    	
+    	myGradeBook.displayMessage();
+    
+    }
+}
