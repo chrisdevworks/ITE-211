@@ -1,0 +1,15 @@
+/**
+ * @(#)GradeBook.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/6/18
+ */
+
+
+public class GradeBook {
+     public void displayMessage(String courseName) {
+    	System.out.printf("Welcome to your GradeBook for %s", courseName);
+    }
+    
+}
