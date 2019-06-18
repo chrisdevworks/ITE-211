@@ -1,0 +1,32 @@
+/**
+ * @(#)GradeBookTest.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/6/18
+ */
+
+import java.util.Scanner;
+
+public class GradeBookTest {
+
+    public static void main(String[] args) {
+    	//GradeBook myGradeBook = new GradeBook();
+    	//myGradeBook.displayMessage();
+    	
+    	Scanner input = new Scanner(System.in);
+    	
+    	GradeBook myGradeBook = new GradeBook();
+    	
+    	System.out.print("Please enter course name: ");
+    		
+    	String courseName = input.nextLine();
+    	
+    	System.out.println();
+    	
+    	myGradeBook.displayMessage(courseName);
+    }
+    
+    
+     
+}
