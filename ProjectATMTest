@@ -1,28 +1,27 @@
-/**
- * @(#)GradeBookTest.java
- *
- *
- * @author 
- * @version 1.00 2019/6/18
- */
-
 import java.util.Scanner;
 
-public class GradeBookTest {
+public class ProjectATMTest {
 
     public static void main(String[] args) {
     	//GradeBook myGradeBook = new GradeBook();
     	//myGradeBook.displayMessage();
     	
-    	Scanner input = new Scanner(System.in);
+    	Scanner input = new Scanner(System.in); // create input object
     	
-    	System.out.print("Please Select Inquiry");
+    	ProjectATM projectATM = new ProjectATM(); //create object
     	
-    	ProjectATM myATM = new ProjectATM();
+    	//ACCOUNT NUMBER
     	
+    	System.out.print("Please enter your account number: ");  //prompt
     	
+    	String myAccount = input.nextLine();  //input myAccount
+    	
+    	//PIN
+    	System.out.print("Enter your PIN: ");  //prompt
     		
-    	String courseName = input.nextInt();
+    	String myPIN = input.nextLine();  //input myPIN
+    	
+    	////////////////////////
     	
     	System.out.println();
     	
@@ -31,6 +30,17 @@ public class GradeBookTest {
     	System.out.println();
     	
     	myGradeBook.displayMessage();
+    	
+    	
+    	//////////////////////////
+    	
+    	if(myAccount ==   ){
+    		if(myPIN == ){
+    			
+    		}
+    		else System.out.println("Wrong PIN");
+    	}
+    	else System.out.println("Wrong Account");
     
     }
 }
