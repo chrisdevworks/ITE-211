@@ -1,27 +1,46 @@
-public class GradeBook {
+public class ProjectATM {
     // public void displayMessage(String courseName) {
     //	System.out.printf("Welcome to your GradeBook for %s", courseName);
     //	
     // }
     
     //Constructor
-    private String getInquiry; 
+    private String myAccount, myPIN;
     
-    //Declare Variable
-    public void getInquiry(String name){
-    	courseName = name;
+    
+    //Constructor Initialize
+    public void setCourseName(String name){
+    	myAccount = secAccount;
+    	myPIN = secPIN;
     }
     
     //Return Value
-    public String getDeposit(){
+    public string getQuery(){
+    	
+    }
+    
+    public double getDeposit(){
+    	return ;
+    }
+    
+    public double getWithdraw(){
     	return courseName;
     }
     
+    public double getBalance(){
+    	
+    	
+    	return 
+    }
+    
+    
+    
     //DISPLAY
-    public void getWithdraw(){
+    public void displayMessage(){
     	System.out.printf("Welcome to the GradeBook for the %s!", getCourseName());
     }
+    
+    public 
      
     
 }
-
