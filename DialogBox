@@ -22,50 +22,60 @@ public class DialogBox {
     	
     //	int con = Integer.parseInt(number);
     	
-    	String repeat = "no";
+    	String repeat2 = "no";
     		
     	do{
     
-		DialogBox2 myDialogBox = new DialogBox2();
-    	
-    	String num1 = JOptionPane.showInputDialog("Input first number: ");
-    	
-    	int con1 = Integer.parseInt(num1);
-    	
-    	String num2 = JOptionPane.showInputDialog("Input second number: ");
-    	
-    	int con2 = Integer.parseInt(num2);
-    	
-    	JOptionPane.showMessageDialog(null, "Select the operation!\nType 1 for Addition!\nType 2 for Subtraction\nType 3 for Multiplication\nType 4 for Division");
-    	
-    	String operation = JOptionPane.showInputDialog("Input Operation: ");
-    	
-    	int sum;
-    	
-    	if(operation.equals("1")){
-    		myDialogBox.Addition(con1,con2);
-    	}
-    	else if(operation.equals("2")){
-    		myDialogBox.Subtraction(con1, con2);
-    	}
-    	else if(operation.equals("3")){
-    		myDialogBox.Multiplication(con1, con2);
-    	}
-    	else if(operation.equals("4")){
-    		myDialogBox.Division(con1, con2);
-    	}
-    	else {
-    		JOptionPane.showMessageDialog(null, "Wrong Input!");
-    	}
-    	
-    	JOptionPane.showMessageDialog(null, "Do you want to try again?");
-    		
-    	repeat = JOptionPane.showInputDialog("Type 'yes' if you want to continue: ");
-    	
-    	//int con3 = Integer.parseInt(repeat);
-    	}
+			DialogBox2 myDialogBox = new DialogBox2();
+	    	
+	    	String num1 = JOptionPane.showInputDialog("Input first number: ");
+	    	
+	    	int con1 = Integer.parseInt(num1);
+	    	
+	    	String num2 = JOptionPane.showInputDialog("Input second number: ");
+	    	
+	    	int con2 = Integer.parseInt(num2);
+	    	
+	    	boolean repeat1 = false;
+	    	
+	    	int sum;
+	    	
+	    	do{
+	    		JOptionPane.showMessageDialog(null, "Select the operation!\nType 1 for Addition!\nType 2 for Subtraction\nType 3 for Multiplication\nType 4 for Division");
+	    	
+	    		String operation = JOptionPane.showInputDialog("Input Operation: ");
+	    	
+				if(operation.equals("1")){
+		    		myDialogBox.Addition(con1,con2);
+		    		break;
+		    	}
+		    	else if(operation.equals("2")){
+		    		myDialogBox.Subtraction(con1, con2);
+		    		break;
+		    	}
+		    	else if(operation.equals("3")){
+		    		myDialogBox.Multiplication(con1, con2);
+		    		break;
+		    	}
+		    	else if(operation.equals("4")){
+		    		myDialogBox.Division(con1, con2);
+		    		break;
+		    	}
+		    	else {
+		    		JOptionPane.showMessageDialog(null, "Wrong Input!");
+		    		repeat1 = true;
+		    	}
+	    	}
+	    	while(repeat1 = true);
+	    	
+	    	JOptionPane.showMessageDialog(null, "Do you want to try again?");
+	    		
+	    	repeat2 = JOptionPane.showInputDialog("Type 'yes' if you want to continue: ");
+	    	
+	    	//int con3 = Integer.parseInt(repeat);
+	    	}
     	//////
-    	while(repeat.equals("yes"));
+    	while(repeat2.equals("yes"));
     }
     
     
