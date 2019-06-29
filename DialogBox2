@@ -9,29 +9,29 @@ import javax.swing.JOptionPane;
 
 public class DialogBox2 {
 	
-	public Integer num1, num2, sum;
+	public double num1, num2, sum;
 
-    public void Addition(int num1, int num2){
+    public void Addition(double num1, double num2){
     	sum = num1 + num2;
-    	String message = String.format("%d + %d = %d", num1,num2,sum);
+    	String message = String.format("%.2f + %.2f = %.2f", num1,num2,sum);
     	JOptionPane.showMessageDialog(null, message);
     }
     
-    public void Subtraction(int num1, int num2){
+    public void Subtraction(double num1, double num2){
     	sum = num1 - num2;
-    	String message = String.format("%d - %d = %d", num1,num2,sum);
+    	String message = String.format("%.2f - %.2f = %.2f", num1,num2,sum);
     	JOptionPane.showMessageDialog(null, message);
     }
     
-    public void Multiplication(int num1, int num2){
+    public void Multiplication(double num1, double num2){
     	sum = num1 * num2;
-    	String message = String.format("%d * %d = %d", num1,num2,sum);
+    	String message = String.format("%.2f * %.2f = %.2f", num1,num2,sum);
     	JOptionPane.showMessageDialog(null, message);
     }
     
-    public void Division(int num1, int num2){
+    public void Division(double num1, double num2){
     	sum = num1 / num2;
-    	String message = String.format("%d / %d = %d", num1,num2,sum);
+    	String message = String.format("%.2f / %.2f = %.2f", num1,num2,sum);
     	JOptionPane.showMessageDialog(null, message);
     }
     
