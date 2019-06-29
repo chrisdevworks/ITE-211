@@ -30,34 +30,34 @@ public class DialogBox {
 	    	
 	    	String num1 = JOptionPane.showInputDialog("Input first number: ");
 	    	
-	    	int con1 = Integer.parseInt(num1);
+	    	double con1 = Double.parseDouble(num1);
 	    	
 	    	String num2 = JOptionPane.showInputDialog("Input second number: ");
 	    	
-	    	int con2 = Integer.parseInt(num2);
+	    	double con2 = Double.parseDouble(num2);
 	    	
 	    	boolean repeat1 = false;
 	    	
 	    	int sum;
 	    	
 	    	do{
-	    		JOptionPane.showMessageDialog(null, "Select the operation!\nType 1 for Addition!\nType 2 for Subtraction\nType 3 for Multiplication\nType 4 for Division");
+	    		JOptionPane.showMessageDialog(null, "Select the operation!\nType  +  for Addition!\nType  -  for Subtraction\nType  *  for Multiplication\nType  /  for Division");
 	    	
 	    		String operation = JOptionPane.showInputDialog("Input Operation: ");
 	    	
-				if(operation.equals("1")){
+				if(operation.equals("+")){
 		    		myDialogBox.Addition(con1,con2);
 		    		break;
 		    	}
-		    	else if(operation.equals("2")){
+		    	else if(operation.equals("-")){
 		    		myDialogBox.Subtraction(con1, con2);
 		    		break;
 		    	}
-		    	else if(operation.equals("3")){
+		    	else if(operation.equals("*")){
 		    		myDialogBox.Multiplication(con1, con2);
 		    		break;
 		    	}
-		    	else if(operation.equals("4")){
+		    	else if(operation.equals("/")){
 		    		myDialogBox.Division(con1, con2);
 		    		break;
 		    	}
