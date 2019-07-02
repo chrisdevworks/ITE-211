@@ -1,0 +1,86 @@
+/**
+ * @(#)StudentGradesTest.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/2
+ */
+import javax.swing.JOptionPane;
+
+public class StudentGradesTest {
+
+    public static void main (String[] args) {
+    		StudentGrades myGrades = new StudentGrades();
+    		
+			double[] first_ArrayGrade = new double[4];
+			double[] second_ArrayGrade = new double[4]; 
+			double[] third_ArrayGrade = new double[4];
+			double[] forth_ArrayGrade = new double[4];
+			double[] fifth_ArrayGrade = new double[4];
+			
+			double[] WeightedAverage = new double[5];
+			double[] average = new double[5];
+			int[] student = new int[5];
+			int[] grade = new int[4];
+			
+			String[] student1 = new String[5];
+			String[] student2 = new String[5];
+			String[] student3 = new String[5];
+			String[] student4 = new String[5];
+			String[] student5 = new String[5];
+			
+			double[] con1 = new double[4];
+			double[] con2 = new double[4];
+			double[] con3 = new double[4];
+			double[] con4 = new double[4];
+			double[] con5 = new double[4];
+			
+			student[5][4]= 
+			
+			
+			//INPUT GRADES
+			for(int x=0; x<4; x++){
+				student1[x] = JOptionPane.showInputDialog("Input grade %d!\n");
+				student2[x] = JOptionPane.showInputDialog("Input grade %d!\n");
+				student3[x] = JOptionPane.showInputDialog("Input grade %d!\n");
+				student4[x] = JOptionPane.showInputDialog("Input grade %d!\n");
+				student5[x] = JOptionPane.showInputDialog("Input grade %d!\n");
+			}
+			
+			//PARSE
+			for(int y=0; y<4; y++ ){
+				con1[y] = Double.parseDouble(student1[y]);
+				con2[y] = Double.parseDouble(student2[y]);
+				con3[y] = Double.parseDouble(student3[y]);
+				con4[y] = Double.parseDouble(student4[y]);
+				con5[y] = Double.parseDouble(student5[y]);
+			}
+			
+			for(int i=0; i<4; i++){
+				average[0] = myGrades.Average(con1[i]);
+				average[1] = myGrades.Average(con2[i]);
+				average[2] = myGrades.Average(con3[i]);
+				average[3] = myGrades.Average(con4[i]);
+				average[4] = myGrades.Average(con5[i]);
+			}
+			
+			for(int j=0; j<4; j++){
+				WeightedAverage[0] = myGrades.weightedAverage(first_ArrayGrade[i]);
+				WeightedAverage[1] = myGrades.weightedAverage(second_ArrayGrade[i]);
+				WeightedAverage[2] = myGrades.weightedAverage(third_ArrayGrade[i]);
+				WeightedAverage[3] = myGrades.weightedAverage(forth_ArrayGrade[i]);
+				WeightedAverage[4] = myGrades.weightedAverage(fifth_ArrayGrade[i]);
+			}
+			
+			for(int k=0; k<4; k++){
+				System.out.printf("The Average Grade of student %d is %.2f", student[k+1], weightedAverage[k]);
+				System.out.printf("The Average Grade of student %d is %.2f", student[k+1], average[k]);
+			}
+			
+			
+			
+			
+    }
+    
+    
+}
