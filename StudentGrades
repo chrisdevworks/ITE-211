@@ -1,0 +1,43 @@
+/**
+ * @(#)StudentGrades.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/2
+ */
+
+
+public class StudentGrades {
+	private double[] Wgrade = {0.2, 0.3, 0.3, 0.2};
+	private double[] totalWgrade = {0.0};
+	private double WgradeAverage = 0.0;
+	private double WtotalGrade = 0.0;
+//	private double 2ndWgrade = 0.3;
+//	private double 3rdWgrade = 0.3;
+//	private double 4thWgrade = 0.2;
+	private double averageGrade = 0.0;
+	private double totalGrade = 0.0;
+    
+    double weightedAverage(double[] grade){
+    	for(int i=0; i<5; i++ ){
+    			totalWgrade[i] = Wgrade[i] * grade[i];
+    			WtotalGrade = totalWgrade[i] + totalGrade;
+    	};
+    	
+    	WgradeAverage = WtotalGrade / 4;
+    	
+    	return WgradeAverage;
+    }
+    
+    double Average(double[] Grade){
+    	for(int i=0; i<5; i++ ){
+    			totalGrade = Grade[i] + totalGrade;
+    	}
+    	averageGrade = totalGrade / 4;
+    	
+    	return averageGrade;
+    }
+    
+    
+    
+}
