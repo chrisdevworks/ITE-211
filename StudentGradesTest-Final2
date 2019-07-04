@@ -1,38 +1,30 @@
-/**
- * @(#)StudentGradesTest.java
- *
- *
- * @author 
- * @version 1.00 2019/7/2
- */
 import java.util.Scanner;
 
 public class StudentGradesTest {
 
     public static void main (String[] args) {
-    //		StudentGrades myGrades = new StudentGrades();
     
     		Scanner input = new Scanner(System.in);
-    
     		double[] Wgrade = {0.2, 0.3, 0.3, 0.2};
-    		
 			double[][] student = new double[5][4];
 			double[][] Weighted = new double[5][4];
 			double[] totalGrade1 = new double[5];
 			double[] totalGrade2 = new double[5];
-			
 			double FinalWeightedAverage[] = new double[5];
 			double averageGrade[] = new double[5];
 			
+			StudentGrades myGrades = new StudentGrades();
 ///////////////////// INPUT //////////////////////////////////
+
 			for(int i=0; i<5; i++){
-				for(int j=0; j<4; j++){
-					System.out.printf("Input Student %d Grade %d: \t", i+1, j+1);
-					student[i][j]=input.nextDouble();
-				}
-				System.out.println();
+					for(int j=0; j<4; j++){
+						System.out.printf("Student[%d] Grade[%d]: \t", i+1, j+1);
+						student[i][j]=input.nextDouble();	
+					}
+					System.out.println();	
 			}
-			
+///////////////////// CALCULATIONS /////////////////////////
+				
 			//////Average TOTAL//////
 			for(int i=0; i<5; i++ ){
 	    		for(int j=0; j<4; j++){
@@ -58,25 +50,16 @@ public class StudentGradesTest {
 	    		FinalWeightedAverage[j] = totalGrade2[j] / 4;
 	    	}
 	    		
-	
-/////////////////// OUTPUT //////////////////////////////////			
-		/*	for(int k=0; k<5; k++){
-				System.out.printf("\nThe Average Grade of student %d is %.3f\n\n", k+1, averageGrade[k]);
-				System.out.printf("\nThe Weighhted Average Grade of student %d is %.3f\n\n", k+1, FinalWeightedAverage[k]);
-			}
-		*/
-			
+/////////////////// OUTPUT //////////////////////////////////					
 			System.out.printf("Student\tGrade1\tGrade2\tGrade3\tGrade4\tAverage\tWeighted\n");
 			
 			for(int i=0; i<5; i++){
-				System.out.printf("%d\t\t", i+1);
+				System.out.printf(" [[%d]]\t", i+1);
 				for(int j=0; j<4; j++){
 					System.out.printf("%.0f\t\t", student[i][j]);
 					//student[i][j]=input.nextDouble();
 				}
 				System.out.printf("%.3f\t%.3f\n", averageGrade[i], FinalWeightedAverage[i]);
-			}
-	
-			
+			}	
     } 
 }
