@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class ProjectATMTest {
+
+    public static void main(String[] args) {
+    	//GradeBook myGradeBook = new GradeBook();
+    	//myGradeBook.displayMessage();
+    	
+    	Scanner input = new Scanner(System.in); 
+    	ProjectATM myATM = new ProjectATM();
+    	double Deposit, Withdraw;
+    	
+    	//ACCOUNT PIN
+    	System.out.prinln("Welcome to your Bank.\nPlease enter your PIN.")
+    	String myPIN = input.nextLine();  //input myPIN
+
+    	System.out.prinln();
+    	
+    	if(myPIN.equals()){
+    		do(){
+    	
+		    	switch(query){
+		    		case 1: 
+		    			System.out.println("View Account Balance.\n");
+		    			myATM.
+		    		
+		    		case 2:
+		    			System.out.println("Deposit Amount.\n");
+		    			Withdraw = input.nextDouble();
+		    			
+		    			
+		    		case 3:
+		    			System.out.println("Withdraw Amount.\n");
+		    			Deposit = input.nextDouble();
+		    			
+		    	}
+		    	
+	
+		    	String repeat2 = "no";
+	    	
+	    	
+	    		
+	    		
+	    	}while(repeat2.equals("yes"));
+	
+	
+			/////////////////////////
+
+    	
+    			
+    	}
+    	else System.out.println("Wrong PIN!");
+    }
+}
