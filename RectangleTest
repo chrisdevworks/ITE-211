@@ -1,0 +1,33 @@
+/**
+ * @(#)RectangleTest.java
+ *
+ *
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/5
+ */
+
+import java.util.Scanner;
+
+public class RectangleTest {
+
+    public static void main (String[] args) {
+    	Scanner input = new Scanner(System.in);
+    	RectangleData myData = new RectangleData();
+
+		System.out.printf("###RECTANGLE AREA & PERIMETER CALCULATOR###\n");
+		
+    	System.out.printf("Please Input Width: \t");
+    	double Wdth = input.nextDouble();
+    	System.out.printf("Please Input Length: \t");
+    	double Lngth = input.nextDouble();
+    		
+    	System.out.println();	
+    	myData.setData(Wdth,Lngth);
+    	myData.showData();
+    	
+    }
+    
+    
+}
