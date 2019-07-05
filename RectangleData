@@ -1,0 +1,38 @@
+/**
+ * @(#)RectangleData.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/5
+ */
+
+
+public class RectangleData {
+	private double RecLength;
+	private double RecWidth;
+	private double RecPerimeter;
+	private double RecArea;
+	
+	public void setData(double Wdth, double Lngth){
+    	RecLength = Wdth;
+    	RecWidth = Lngth;
+    }
+
+    public double area() {
+    	RecArea = RecLength * RecWidth;
+    	return RecArea;
+    }
+    
+    public double perimeter(){
+    	RecPerimeter = RecLength + RecLength + RecWidth + RecWidth;
+    	return RecPerimeter;
+    }
+    
+    public void showData(){
+    	System.out.printf("The Rectangles Data: \nLength:\t\t%.2f\n", RecLength);
+    	System.out.printf("Width:\t\t%.2f\n", RecWidth);
+    	System.out.printf("Area:\t\t%.2f\n", area());
+    	System.out.printf("Perimeter:\t%.2f\n", perimeter());
+    }
+    
+}
