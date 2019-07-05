@@ -1,0 +1,44 @@
+public class ProjectATM {
+    // public void displayMessage(String courseName) {
+    //	System.out.printf("Welcome to your GradeBook for %s", courseName);
+    //	
+    // }
+    
+    //Constructor
+    private String myPIN;
+    private double initialBalance, Balance, Deposit, Withdraw;
+    
+    //Constructor Initialize
+    public void setRecords(String secPIN){
+    	myAccount = secAccount;
+    	myPIN = secPIN;
+    }
+    
+    //Return Value
+    public string getQuery(){
+    	 
+    }
+    
+    public void getDeposit(){
+    	Balance = Balance + amount; // Add amount to balance
+    }
+    
+    public double getWithdraw(){
+    	Balance = Balance - amount;
+    }
+    
+    public double getBalance(){
+    	return Balance;
+    }
+    
+    
+    
+    //DISPLAY
+    public void displayMessage(){
+    	System.out.printf("Welcome to the GradeBook for the %s!", getCourseName());
+    }
+    
+    public 
+     
+    
+}
