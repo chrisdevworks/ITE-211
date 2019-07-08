@@ -1,0 +1,82 @@
+/**
+ * @(#)Withdrawal.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/8
+ */
+import java.util.Scanner;
+
+public class Withdrawal extends Transaction {
+	private Scanner input = new Scanner(System.in);
+
+	private int amount;
+	private CashDispenser cashDispenser;
+	private final static int CANCELED = 6;
+	
+    public Withdrawal( int userAccountNumber, BankDatabase atmBankDatabase, CashDispenser atmCashDispenser ) {
+    	super( userAccountNumber, atmBankDatabase );
+    	cashDispenser = atmCashDispenser;
+    }
+	    
+    public void execute(){
+    	boolean cashDispenser = false;
+    	double availableBalance;
+    	
+    	BankDatabase bankDatabase = getBankDatabase();
+    	
+    	do{
+    		amount = displayMenuOfAmounts();
+    		
+    		if( amount != CANCELED ){
+    			availableBalance = bankDatabase.getAvailableBalance( getAccountNumber() );
+    			if( amount <= availableBalance ){
+    				if( cashDispenser.isSufficientCashAvailable( amount ) ){
+    					bankDatabase.debit( getAccountNumber(), amount );
+    					cashDispenser.dispenseCash( amount );
+    					cashDispensed = true;
+    					System.out.println("\nYour cash has been dispensed Please take your cash now.");
+    				}
+	    			else {
+	    				System.out.println("\nInsufficient cash available in the ATM.\n\nPlease choose a smaller amount.");
+	    			}	
+	    		}
+	    		else{
+    				System.out.println("Insufficient fund in your account.\n\nPlease choose a smaller amount.");
+    			}
+    		}
+    		else{
+    			System.out.println("\nCanceling transaction...");
+    			return;
+    		}
+    	} while( !cashDispensed );
+    }// end method execute
+    
+    private int displayMenuOfAmounts(){
+    	int userChoice = 0;
+    	int amounts = 0;
+		
+		while( userChoice == 0){
+			System.out.println("\nWithdrawal Menu.");
+			System.out.println("\nEnter a withdrawal amount: ");
+			int Input = input.nextInt();
+			
+			switch( Input ){
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+					userChoice = amounts;
+					break;
+				case CANCELED:
+					break;
+				default:
+					System.out.println("\nInvalid selection. Try again.");
+			} 
+		}
+		
+		return userChoice;
+    	
+    }
+}//END CLASS
