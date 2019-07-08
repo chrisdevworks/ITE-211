@@ -6,7 +6,7 @@ public class BalanceInquiry extends Transaction {
     	super( userAccountNumber, atmBankDatabase);
     }
     
-    public void execut(){
+    public void execute(){
     	BankDatabase bankDatabase = getBankDatabase();
     	
     	double availableBalance = bankDatabase.getAvailableBalance( getAccountNumber() );
