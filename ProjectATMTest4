@@ -1,0 +1,7 @@
+public class ProjectATMTest {
+
+    public static void main(String[] args){
+    	ATM myATM = new ATM();
+    	myATM.run();
+    }
+}
