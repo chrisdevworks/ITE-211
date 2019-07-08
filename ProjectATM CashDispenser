@@ -1,0 +1,25 @@
+
+public class CashDispenser {
+	private final static int INITIAL_COUNT = 10000000;
+	private int count;
+
+    public CashDispenser() {
+    	count = INITIAL_COUNT;
+    }
+    
+    public void dispenseCash(int amount){
+    	int billsRequired = amount;
+    	count -= billsRequired;
+    }
+    
+    public boolean isSufficientCashAvailable(int amount){
+    	int billsRequired = amount;
+    	
+    	if( count >= billsRequired){
+    		return true;
+    	}
+    	else{
+    		return false;
+    	}
+    }
+}
