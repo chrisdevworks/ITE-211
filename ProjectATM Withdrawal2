@@ -1,0 +1,70 @@
+/**
+ * @(#)Withdrawal.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/8
+ */
+import java.util.Scanner;
+
+public class Withdrawal {
+	private Scanner input = new Scanner(System.in);
+	private CashDispenser cashDispenser;
+	private int amount;
+	private double availableBalance;
+	private double totalBalance;
+	
+	
+	public void execute(){
+		int userChoice = 0;
+    	int amount = 0;
+		boolean cashDispensed = false;
+		
+		do{
+			while( userChoice == 0 ){
+		    	System.out.println("\nWithdrawal Menu:");
+		    	System.out.println("\n1 - WITHDRAW");
+		    	System.out.println("\n2 - EXIT");
+		    	System.out.println("\nSelect an option: ");
+		    	int Input = input.nextInt();
+		    	//determine how to proceed
+		    	switch( Input ){
+		    		case 1:
+		    			System.out.println("\nInput a withdrawal amount: ");	
+		    			amount = input.nextInt();
+		    			break;
+		    		case 2:
+		    			userChoice = 1;
+		    			break;
+		    		default: //user did not enter did not enter 1 or 0
+		    			System.out.println("Invalid selection. Try again.");
+			    } // end switch
+		   	} // end while//end while
+			
+			if( Input = 1 ){
+				Total = ;
+				if( amount <= availableBalance ){
+					if( cashDispenser.CashAvailable( amount ) ){
+						cashDispenser.dispenseCash( amount );
+						cashDispensed = true;
+						System.out.println("\nYour cash has been dispensed. Please take your cash now.");
+					}//end if
+					else{
+						System.out.println("\nInsufficient cash available in the ATM. \nPlease choose a smaller amount.");
+					}//end else
+				}//end if
+				else{	
+					System.out.println("\nInsufficient funds in your account. \nPlease choose a smaller amount.");
+				}
+			}
+			else{
+				System.out.println("\nCancelling transaction...");
+				return;
+			}//end else
+			
+		}while(!cashDispensed);
+		
+	}
+    //Loop while no valid choice has been made
+    
+} //end class Withdrawal 
