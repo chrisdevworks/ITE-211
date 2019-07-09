@@ -1,0 +1,76 @@
+/**
+ * @(#)ProjectATM.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/8
+ */
+import java.util.Scanner;
+
+public class ProjectATM {
+	
+	private Scanner input = new Scanner(System.in);
+	
+    private final static int BALANCE_INQUIRY = 1;
+    private final static int WITHDRAW = 2;
+    private final static int DEPOSIT = 3;
+    private final static int EXIT = 4;
+    public Withdrawal withdrawal = new Withdrawal();
+    public Deposit deposit = new Deposit();
+    public CashDispenser cashDispenser  = new CashDispenser();
+    public BalanceInquiry balance = new BalanceInquiry();
+    public double totalBalance;
+    public double amount;
+	
+	public void run(){
+    	while(true){
+    		System.out.println("Welcome!");
+    		performTransactions();
+    		System.out.println("\nThank you! Goodbye!");
+    	}
+    }
+    
+    private void performTransactions(){
+    	
+    	boolean userExited = false; //user has not chosen to exit
+    	
+    	//loop while user has not chosen option to exit system
+    	while( !userExited ){
+    		int mainMenuSelection = displayMainMenu();
+    		
+    		switch( mainMenuSelection ){
+    			case BALANCE_INQUIRY:
+    				balance.execute();
+    				break;
+    				
+    			case WITHDRAW:
+    				withdrawal.execute();
+    				break;
+    					
+    			case DEPOSIT:
+    				deposit.execute();
+    				break;
+    			
+    			case EXIT:
+    				System.out.println("Exiting the system...");
+    				userExited = true;
+    				break;
+    			
+    			default:
+    				System.out.println("You did not enter a valid selection. Try Again.");
+    				break;
+    		}
+    	}
+    }
+    
+    private int displayMainMenu(){
+    	System.out.println("\nMain Menu:");
+    	System.out.println("1 - View my balance");
+    	System.out.println("2 - Withdraw cash");
+    	System.out.println("3 - Deposit funds");
+    	System.out.println("4 - Exit\n");
+    	
+    	System.out.println("\nSelect a transaction: ");
+    	return input.nextInt(); // returns int value
+    }
+}// END CLASS
