@@ -1,0 +1,170 @@
+/**
+ * @(#)ProjectATM.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/8
+ */
+import java.util.Scanner;
+
+public class ProjectATM {
+	
+	private Scanner input = new Scanner(System.in);
+	
+	private int AccountNumber;
+    private double amount;
+    private final static int BALANCE_INQUIRY = 1;
+    private final static int WITHDRAWAL = 2;
+    private final static int DEPOSIT = 3;
+    private final static int EXIT = 4;
+    private final static int CashDispenser = 10000000;
+    public double availableBalance;
+    public double totalBalance;
+    public double deposit;
+    public double amount;
+    
+	
+	public void run(){
+    	while(true){
+    		System.out.println("Welcome!");
+    		performTransactions();
+    		System.out.println("\nThank you! Goodbye!");
+    	}
+    }
+    
+    private void performTransactions(){
+    	
+    	boolean userExited = false; //user has not chosen to exit
+    	
+    	//loop while user has not chosen option to exit system
+    	while( !userExited ){
+    		int mainMenuSelection = displayMainMenu();
+    		
+    		switch( mainMenuSelection ){
+    			case BALANCE_INQUIRY:
+    				System.out.println("\nBalance Information: ");
+    				System.out.print(" - Available balance: ");
+    				System.out.printf("$%,.2f", availableBalance);
+    				System.out.print("\n - Total balance:	");
+    				System.out.printf("$%,.2f", totalBalance);
+    				System.out.println("");
+    				break;
+    				
+    			case WITHDRAWAL:
+    				
+    				if( amount <= totalBalance ){
+	    				if( cashDispenser.isSufficientCashAvailable( amount ) ){
+	    					bankDatabase.debit( getAccountNumber(), amount );
+	    					cashDispenser.dispenseCash( amount );
+	    					cashDispensed = true;
+	    					System.out.println("\nYour cash has been dispensed Please take your cash now.");
+	    				}
+		    			else {
+		    				System.out.println("\nInsufficient cash available in the ATM.\n\nPlease choose a smaller amount.");
+		    			}	
+		    		}
+		    		else{
+	    				System.out.println("Insufficient fund in your account.\n\nPlease choose a smaller amount.");
+	    			}
+    				break;
+    					
+    			case DEPOSIT:
+    				
+    				break;
+    			
+    			case EXIT:
+    				System.out.println("Exiting the system...");
+    				userExited = true;
+    				break;
+    			
+    			default:
+    				System.out.println("You did not enter a valid selection. Try Again.");
+    				break;
+    		}
+    	}
+    }
+    
+    private int displayMainMenu(){
+    	System.out.println("\nMain Menu:");
+    	System.out.println("1 - View my balance");
+    	System.out.println("2 - Withdraw cash");
+    	System.out.println("3 - Deposit funds");
+    	System.out.println("4 - Exit\n");
+    	
+    	System.out.println("\nSelect a transaction: ");
+    	return input.nextInt(); // returns int value
+    }
+    
+    public int Withdrawal(){
+    	int userChoice = 0;
+    	//Loop while no valid choice has been made
+    	while( userChoice == 0 ){
+    		System.out.println("\nWithdrawal Menu:");
+    		System.out.println("\n1 - WITHDRAW");
+    		System.out.println("\n2 - EXIT");
+    		System.out.println("\nSelect an option: ");
+    		int choice = input.nextInt();
+    		//determine how to proceed
+    		switch( choice ){
+    			case 1:
+    				System.out.println("\nInput a withdrawal amount: ");	
+    				double amount = input.nextInt();
+    				totalBalance -= amount;
+    				break;
+    			case 2:
+    				userChoice = 3;
+    				break;
+    			default: //user did not enter did not enter 1 or 0
+    				System.out.println("Invalid selection. Try again.");
+    		} // end switch
+    	} // end while
+    } //end class Withdrawal
+    
+    public int Deposit(){
+    	int userChoice = 0;
+    	//Loop while no valid choice has been made
+    	while( userChoice == 0 ){
+    		System.out.println("\nWithdrawal Menu:");
+    		System.out.println("\n1 - WITHDRAW");
+    		System.out.println("\n2 - EXIT");
+    		System.out.println("\nSelect an option: ");
+    		int choice = input.nextInt();
+    		//determine how to proceed
+    		switch( choice ){
+    			case 1:
+    				System.out.println("\nInput a withdrawal amount: ");	
+    				double amount = input.nextInt();
+    				totalBalance -= amount;
+    				break;
+    			case 2:
+    				userChoice = 3;
+    				break;
+    			default: //user did not enter did not enter 1 or 0
+    				System.out.println("Invalid selection. Try again.");
+    		} // end switch
+    	} // end while
+    } //end class Withdrawal
+  /*  
+    private Transaction createTransaction(int choice){
+    private Transaction createTransaction(int choice){
+    	Transaction temp = new Transaction();
+    	temp = null;
+    	
+    	switch(choice){
+    		case BALANCE_INQUIRY:
+    			temp = new BalanceInquirey();
+    			break;
+    			
+    		case WITHDRAWAL:
+    			temp = new Withdrawal();
+    			break;
+    			
+    		case DEPOSIT:
+    			temp = new Deposit();
+    			break;
+    	} //end switch
+    	return temp; //return newly created object
+    } //end method createTransaction
+     */
+    
+}// END CLASS
