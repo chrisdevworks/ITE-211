@@ -1,0 +1,31 @@
+/**
+ * @(#)BalanceInquiry.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/8
+ */
+
+
+public class BalanceInquiry {
+    private double availableBalance;
+   	private double totalBalance;
+    	
+    public void execute(){ 		
+    	System.out.println("\nBalance Information: ");
+    	System.out.print(" - Available balance: ");
+		System.out.printf("$%,.2f", availableBalance); // Available Balance
+    	System.out.print("\n - Total balance:	");
+    	System.out.printf("$%,.2f", totalBalance); // TotalBalance;
+    	System.out.println("");
+    }
+    
+    public void credit(double amount){
+    	totalBalance += amount;
+    }
+    
+    public void debit(double amount){
+    	availableBalance -= amount;
+    	totalBalance -= amount;
+    }
+}
