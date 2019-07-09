@@ -1,0 +1,44 @@
+/**
+ * @(#)Deposit.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/8
+ */
+import java.util.Scanner;
+
+public class Deposit {
+	private Scanner input = new Scanner(System.in);
+	private double amount;
+	
+    public void execute(){
+    	amount = promptForDepositAmount();
+    	
+    	if( amount != 0 ){
+    		boolean Received = true;
+    		if( Received ){
+    			System.out.println("\nYour amount has been received.");
+    		}
+    		else {
+    			System.out.println("\nYou did not enter an amount, so the ATM has cancelled your transaction.");
+    		}
+    	}
+    	else{
+    		System.out.println("\nCanceling trasaction...");
+		}   	
+    	
+    }//end method
+    
+    public double promptForDepositAmount(){
+    	System.out.println("\nPlease enter a deposit amount.");
+    	double Input = input.nextDouble();
+    	
+    	if( Input == 0){
+    		return 0;
+    	}
+    	else{
+    		return Input;
+    	}
+    }
+    
+}
