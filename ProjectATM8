@@ -1,0 +1,156 @@
+/**
+ * @(#)ProjectATM.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/8
+ */
+import java.util.Scanner;
+
+public class ProjectATM {
+	
+	private Scanner input = new Scanner(System.in);
+	
+    private final static int BALANCE_INQUIRY = 1;
+    private final static int WITHDRAW = 2;
+    private final static int DEPOSIT = 3;
+    private final static int EXIT = 4;
+    private double CashDispenser = 10000000;
+    private double totalBalance = 0;
+    public double amount = 0;
+	
+	public void run(){
+    		System.out.println("Welcome!");
+    		performTransactions();
+    		System.out.println("\nThank you! Goodbye!");
+    }
+    
+    
+    // Transaction
+    private void performTransactions(){
+    	
+    	boolean userExited = false; //user has not chosen to exit
+    	
+    	//loop while user has not chosen option to exit system
+    	while( !userExited ){
+    		int mainMenuSelection = displayMainMenu(); // return 1, 2, 3, 4
+    		
+    		switch( mainMenuSelection ){
+    			case BALANCE_INQUIRY:
+    				balanceInquiry();
+    				System.out.println("\nBalance Information\n");
+    				System.out.println("Total balance: %.2f\n", totalBalance);
+    				break;
+    				
+    			case WITHDRAW:
+    				availableBalance = Withdrawal(totalBalance, CashDispenser);
+    				balanceInquiry(availableBalance);
+    				break;
+    					
+    			case DEPOSIT:
+    				amount = input.nextDouble();
+    				deposit(amount, totalBalance);
+    				break;
+    			
+    			case EXIT:
+    				System.out.println("Exiting the system...");
+    				userExited = true;
+    				break;
+    			
+    			default:
+    				System.out.println("\nYou did not enter a valid selection. Try Again.");
+    				break;
+    		}
+    	}
+    }
+    
+    
+    // MAIN MENU *
+    private int displayMainMenu(){
+    	int Input;
+    	
+    	System.out.println("\nMain Menu:");
+    	System.out.println("1 - View my balance");
+    	System.out.println("2 - Withdraw cash");
+    	System.out.println("3 - Deposit funds");
+    	System.out.println("4 - Exit\n");
+    	
+    	// Loop until user choice is 1-4
+    	System.out.println("\nSelect a transaction: ");
+    	do{
+    		Input = input.nextInt();
+    		if( Input < 1 || Input > 4){
+    			System.out.println("\nYou did not enter a valid selection. Try again.");
+    		}
+    	}while( Input < 1 || Input > 4 );
+    	
+    	return Input; // return int
+    }
+    
+    // WITHDRAW **
+    private double Withdrawal(double balance, double dispenser){
+    	double withdraw = 0;
+    	System.out.println("\nWithdrawal Menu:");
+    	System.out.println("1 - View my balance");
+    	System.out.println("2 - Cancel Transaction");
+    	
+    	while( userChoice == 0){
+	    	System.out.println("Please Select Transaction: ");	
+	    	userChoice = input.nextInt();
+			
+    		switch(Input){
+			case 1:
+				while(withdraw <= balance){
+	    			System.out.println("\nInput amount: ");	
+					withdraw = input.nextDouble();
+					
+					if(withdraw <= balance){
+			    		if(totalBalance > CashDispenser){
+			    			double availableBalance = balance - withdraw;
+			    			System.out.println("Amount Withdraw: %.2f\n", withdraw);
+    						System.out.println("Total Balance: %.2f\n", totalBalance);
+			    			break;
+			    		}
+			    		else{
+			    			System("Insufficient cash available in the ATM.\nPlease choose a smaller amount.");
+			    			break;
+			    		}
+			    	}
+			    	else{
+			    		System("Insufficient funds in your account.\nPlease choose a smaller amount.");
+			    		break;
+			    	}
+				}
+					
+			case 2:
+				userChoice = 1;
+				System.out.println("\nExiting Transaction...");
+				break;	
+		
+			default:
+				System.out.println("\nInvalid selection. Try again.");	
+			}
+    	}
+		
+
+    	
+    	return availableBalance; // return double
+    }
+    
+    // DEPOSIT ***
+    private double deposit(double amount, double balance){
+    	System.out.println("Please input a withdrawal amount: ");
+    	double amount = input.nextDouble(); 
+    	double availableBalance = amount + balance;
+    	System.out.println("Amount Withdraw: %.2f\n", withdraw);
+    	System.out.println("Total Balance: %.2f\n", totalBalance);
+    	return availableBalance; // return double
+    }
+    
+    // BALANCE ****
+    private double balanceInquiry(double availableBalance){ 
+    	double totalBalance += availableBalance;
+    	double CashDispenser -= totalBalance;
+    	return totalBalance;
+    }
+}// END CLASS
