@@ -1,0 +1,48 @@
+/**
+ * @(#)TimeMain.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/11
+ */
+import java.util.Scanner;
+
+public class TimeMain {
+
+    public static void main(String[] args){
+    	Time time = new Time();
+		LTime ltime = new LTime();
+		
+		Scanner input = new Scanner(System.in);
+		
+		int hours, minutes, seconds, choice, elsecs;
+		
+		String[] ctime = {"hours","minutes","seconds"};
+    	
+    	System.out.println("Welcome!");
+    	System.out.println("Please select the time format:");
+    	System.out.println("1 - for hours:minutes:seconds");
+    	System.out.println("2 - for seconds");
+    	
+    	choice = input.nextInt();
+    	
+    	switch(choice){
+    		case 1:
+    			System.out.println("Input hours");
+    			hours = input.nextInt();
+    			System.out.println("Input minutes");
+				minutes = input.nextInt();
+    			System.out.println("Input seconds");
+    			seconds = input.nextInt();
+    			time.LTime(hours,minutes,seconds);
+    			break;
+    		case 2:
+    			System.out.println("Input seconds");
+    			elsecs = input.nextInt();
+    			ltime.Time(elsecs);
+    			break;
+    	}
+    }
+    
+    
+}
