@@ -1,0 +1,39 @@
+/**
+ * @(#)LTime.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/11
+ */
+import java.util.Scanner;
+
+public class LTime {
+
+    private int elsecs;
+    private int Day = 43200;
+	private int Hour = 3600;
+	private int Minutes = 60;
+	
+	private int hours,minutes,seconds;
+
+    public void Time(int x) {
+    	x = elsecs;
+    	
+    	//20543
+    	
+    	//hours
+    	while(elsecs>3600){
+    		elsecs-= 3600;
+    		hours++;
+    	}
+    	while(elsecs<3600 && elsecs>60){
+    		elsecs-= 60;
+    		minutes++;
+    	}
+    	elsecs = seconds;
+    	
+    	System.out.printf("%d : %d : %d", hours, minutes, seconds);
+    }
+    
+    
+}
