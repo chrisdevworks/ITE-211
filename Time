@@ -1,0 +1,27 @@
+/**
+ * @(#)Time.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/11
+ */
+
+
+public class Time {
+	
+	private int hours, minutes, seconds, total;
+    
+    public void LTime(int x, int y, int z){
+    	seconds = z;
+    	minutes = y * 60;
+    	hours =  x * 60 * 60;
+    	
+    	
+    	int total = hours + minutes + seconds;
+    	
+   	System.out.printf("%d", total);
+    }
+    
+    
+    
+}
