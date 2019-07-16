@@ -23,8 +23,8 @@ public class ProjectATM {
     		switch( mainMenuSelection ){
     			case BALANCE_INQUIRY:
     				System.out.println("\n#####################################");
-    				System.out.println("\n######## Balance Information ########");
-    				System.out.println("\n#####################################\n\n");
+    				System.out.println("######## Balance Information ########");
+    				System.out.println("#####################################\n\n");
     				System.out.printf("Total balance: %.2f\n\n", totalBalance);
     				while(true){
     					System.out.println("\nPress 1 to EXIT:");
@@ -44,8 +44,8 @@ public class ProjectATM {
     			*/		
     			case DEPOSIT:    	
     				System.out.println("\n#####################################");
-    				System.out.println("\n######## Deposit Information ########");
-    				System.out.println("\n#####################################\n\n");
+    				System.out.println("######## Deposit Information ########");
+    				System.out.println("#####################################\n");
     				deposit();
     				System.out.println("\n\n#####################################");
     				break;
@@ -69,7 +69,7 @@ public class ProjectATM {
     	int Input;
     	System.out.println("#####################################");
     	System.out.println("########      Main Menu:     ########");
-    	System.out.println("#####################################\n");
+    	System.out.println("#####################################");
     	System.out.println("1 - View my balance");
     	System.out.println("2 - Withdraw cash");
     	System.out.println("3 - Deposit funds");
