@@ -8,7 +8,7 @@ public class ProjectATM {
     private final static int WITHDRAW = 2;
     private final static int DEPOSIT = 3;
     private final static int EXIT = 4;
-    private double totalBalance = 100000;
+    private double totalBalance = 0;
     public double amount = 0;
     
     // Transaction
@@ -46,7 +46,7 @@ public class ProjectATM {
     				break;
     			
     			case EXIT:
-    				System.out.println("Exiting the system...");
+    				System.out.println("\nExiting the system...");
     				userExit = true;
     				System.out.println("\nThank you! Goodbye!");
     				break;
@@ -60,7 +60,7 @@ public class ProjectATM {
     
     
     // MAIN MENU *
-    public int displayMainMenu(){
+    private int displayMainMenu(){
     	int Input;
     	System.out.println("#####################################");
     	System.out.println("########      Main Menu:     ########");
@@ -86,7 +86,7 @@ public class ProjectATM {
 
 
     // WITHDRAW **
-    public void Withdrawal(){
+    private void Withdrawal(){
     	double withdraw = 0;
     	while(true){
     		System.out.println("#####################################");
@@ -102,8 +102,7 @@ public class ProjectATM {
 		    	System.out.printf("\nYour total balance: %.2f\n", balanceInquiry(balance));	
 			}
 			else{
-				System.out.println("Insufficient funds in your account.\nPlease choose a smaller amount.");
-				break;
+				System.out.println("\nInsufficient funds in your account.\nPlease choose a smaller amount.\n");
 			}
 			
 			
@@ -120,7 +119,7 @@ public class ProjectATM {
 
 
     // DEPOSIT ***
-    public void deposit(){
+    private void deposit(){
     	while(true){
     		System.out.println("#####################################");
     		System.out.println("######## Deposit Information ########");
@@ -145,7 +144,7 @@ public class ProjectATM {
     
     
     // BALANCE ****
-    public double balanceInquiry(double balance){ 
+    private double balanceInquiry(double balance){ 
     	totalBalance = totalBalance + balance;	
     	return totalBalance;
     }
