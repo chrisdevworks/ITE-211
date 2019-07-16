@@ -8,7 +8,6 @@ public class ProjectATM {
     private final static int WITHDRAW = 2;
     private final static int DEPOSIT = 3;
     private final static int EXIT = 4;
-    private double CashDispenser = 10000000;
     private double totalBalance = 100000;
     public double amount = 0;
     
@@ -35,13 +34,12 @@ public class ProjectATM {
     				}
     				System.out.println("\n\n#####################################");
     				break;
-    			/*	
+    				
     			case WITHDRAW:
-    				availableBalance = Withdrawal(totalBalance, CashDispenser);
-    				balanceInquiry(availableBalance);
+    				Withdrawal();
     				System.out.println("\n\n#####################################");
     				break;
-    			*/		
+    					
     			case DEPOSIT:    	
     				deposit();
     				System.out.println("\n\n#####################################");
@@ -81,38 +79,32 @@ public class ProjectATM {
     			System.out.println("\nYou did not enter a valid selection. Try again.");
     		}
     	}while( Input < 1 || Input > 4 );
-
+    	System.out.println("");
     	return Input; // return int
     }
 
 
 
     // WITHDRAW **
-    public double Withdrawal(double balance, double dispenser){
+    public void Withdrawal(){
+    	double withdraw = 0;
     	while(true){
-    		System.out.println("\n#####################################");
+    		System.out.println("#####################################");
     		System.out.println("######## Withdrawal Information ########");
     		System.out.println("#####################################\n\n");
     		System.out.println("Please input a withdraw amount: ");
-			withdraw = input.nextDouble();
-			do{
-				if(withdraw <= totalBalance)){
-					if(totalBalance >= CashDispenser){
-					    double availableBalance = balance - withdraw;
-					    System.out.println("Amount Withdraw: %.2f\n", withdraw);
-		    			System.out.println("Total Balance: %.2f\n", totalBalance);
-					   	break;
-					}
-					else{
-					    System("Insufficient cash available in the ATM.\nPlease choose a smaller amount.");
-					    break;
-					    }
-					}
-				else{
-					System("Insufficient funds in your account.\nPlease choose a smaller amount.");
-					break;
-				}
-			}while(withdraw <= totalBalance)
+    		withdraw = input.nextDouble();
+	    	System.out.println("\n#####################################");
+    		double balance = 0;
+			if(withdraw <= totalBalance){
+				balance = balance - withdraw;
+				System.out.printf("\nYou have withdrawn: %.2f\n", withdraw);
+		    	System.out.printf("\nYour total balance: %.2f\n", balanceInquiry(balance));	
+			}
+			else{
+				System.out.println("Insufficient funds in your account.\nPlease choose a smaller amount.");
+				break;
+			}
 			
 			
 			System.out.println("\nPress 1 to Exit Transaction");
@@ -130,9 +122,9 @@ public class ProjectATM {
     // DEPOSIT ***
     public void deposit(){
     	while(true){
-    		System.out.println("\n#####################################");
+    		System.out.println("#####################################");
     		System.out.println("######## Deposit Information ########");
-    		System.out.println("#####################################\n\n\n\n\n");
+    		System.out.println("#####################################");
 	    	System.out.println("Please input a deposit amount: ");
 	    	amount = input.nextDouble(); 
 	    	System.out.println("\n#####################################");
@@ -140,8 +132,6 @@ public class ProjectATM {
 			double balance = 0;
 	    	balance = balance + amount;
 			System.out.printf("\nYour total balance is %.2f\n", balanceInquiry(balance));
-			CashDispenser = CashDispenser + totalBalance;
-			
 	    	System.out.println("\nPress 1 to Exit Transaction");
 	    	System.out.println("Press 2 to Continue Deposit");
 	    	System.out.println("Input Choice: ");
@@ -157,8 +147,6 @@ public class ProjectATM {
     // BALANCE ****
     public double balanceInquiry(double balance){ 
     	totalBalance = totalBalance + balance;	
-    	CashDispenser = CashDispenser + totalBalance;
-
     	return totalBalance;
     }
     
