@@ -25,15 +25,25 @@ public class ProjectATM {
     		
     		switch( mainMenuSelection ){
     			case BALANCE_INQUIRY:
-    				System.out.println("\nBalance Information\n");
-    				System.out.printf("Total balance: %.2f\n", totalBalance);
-    				break;
+    				System.out.println("#####################################");
+    				System.out.println("#####################################");
+    				System.out.println("Balance Information\n\n");
+    				System.out.printf("Total balance: %.2f\n\n", totalBalance);
+    				while(true){
+    					System.out.println("\nPress 1 to EXIT:");
+    					double choice = input.nextDouble();
+    					if(choice == 1){
+    						break;
+    					}
+    				}
     				
+    				break;
+    			/*	
     			case WITHDRAW:
     				availableBalance = Withdrawal(totalBalance, CashDispenser);
     				balanceInquiry(availableBalance);
     				break;
-    					
+    			*/		
     			case DEPOSIT:
     				amount = input.nextDouble();
     				deposit(amount);
@@ -57,12 +67,12 @@ public class ProjectATM {
     public int displayMainMenu(){
     	int Input;
     	
-    	System.out.println("\nMain Menu:");
+    	System.out.println("Main Menu:");
     	System.out.println("1 - View my balance");
     	System.out.println("2 - Withdraw cash");
     	System.out.println("3 - Deposit funds");
     	System.out.println("4 - Exit");
-    	System.out.println("\n\n\n\n");
+    	
     	
     	// Loop until user choice is 1-4
     	System.out.println("\nSelect a transaction: ");
@@ -72,7 +82,7 @@ public class ProjectATM {
     			System.out.println("\nYou did not enter a valid selection. Try again.");
     		}
     	}while( Input < 1 || Input > 4 );
-    	
+
     	return Input; // return int
     }
     /*
@@ -127,25 +137,22 @@ public class ProjectATM {
     }
     */
     // DEPOSIT ***
-    public double deposit(double amount){
+    public void deposit(double amount){
     	System.out.println("Please input a withdrawal amount: ");
     	amount = input.nextDouble(); 
 		System.out.printf("\nYou have deposited %.2f", amount);
-		
-    	double balance = balance + amount;
+		double balance = 0;
+    	balance = balance + amount;
 		System.out.printf("\nYour total balance is %.2f", balanceInquiry(balance));
-		
-    	double CashDispenser = CashDispenser + totalBalance;
+		CashDispenser = CashDispenser + totalBalance;
     }
-    
-    
-    
-    
     
     
     // BALANCE ****
     public double balanceInquiry(double balance){ 
-    	double totalBalance = totalBalance + balance;	
+    	totalBalance = totalBalance + balance;	
+    	CashDispenser = CashDispenser + totalBalance;
+
     	return totalBalance;
     }
     
