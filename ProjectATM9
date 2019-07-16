@@ -43,9 +43,6 @@ public class ProjectATM {
     				break;
     			*/		
     			case DEPOSIT:    	
-    				System.out.println("\n#####################################");
-    				System.out.println("######## Deposit Information ########");
-    				System.out.println("#####################################\n");
     				deposit();
     				System.out.println("\n\n#####################################");
     				break;
@@ -87,17 +84,17 @@ public class ProjectATM {
 
     	return Input; // return int
     }
-    /*
+
     // WITHDRAW **
     public double Withdrawal(double balance, double dispenser){
-    	double withdraw = 0;
-    	System.out.println("\nWithdrawal Menu:");
-    	System.out.println("1 - View my balance");
-    	System.out.println("2 - Cancel Transaction");
-    	
-    	while( userChoice == 0){
+    	while(true){
+    		System.out.println("\n#####################################");
+    		System.out.println("######## Withdrawal Information ########");
+    		System.out.println("#####################################\n\n");
+    		System.out.println("1 - View my balance");
+    		System.out.println("2 - Cancel Transaction");
 	    	System.out.println("Please Select Transaction: ");	
-	    	userChoice = input.nextInt();
+	    	Input = input.nextInt();
 			
     		switch(Input){
 			case 1:
@@ -131,29 +128,38 @@ public class ProjectATM {
 			default:
 				System.out.println("\nInvalid selection. Try again.");	
 			}
+			break;
     	}
 		
 
     	
     	return availableBalance; // return double
     }
-    */
+
     // DEPOSIT ***
     public void deposit(){
-    	System.out.println("Please input a deposit amount: ");
-    	amount = input.nextDouble(); 
-		System.out.printf("\nYou have deposited %.2f", amount);
-		double balance = 0;
-    	balance = balance + amount;
-		System.out.printf("\nYour total balance is %.2f", balanceInquiry(balance));
-		CashDispenser = CashDispenser + totalBalance;
-		while(true){
-    		System.out.println("\nPress 1 to EXIT:");
-    		double choice = input.nextDouble();
-    		if(choice == 1){
-    			break;
-    		}
+    	while(true){
+    		System.out.println("\n#####################################");
+    		System.out.println("######## Deposit Information ########");
+    		System.out.println("#####################################\n\n\n\n\n");
+	    	System.out.println("Please input a deposit amount: ");
+	    	amount = input.nextDouble(); 
+	    	System.out.println("\n#####################################");
+			System.out.printf("\nYou have deposited %.2f\n", amount);
+			double balance = 0;
+	    	balance = balance + amount;
+			System.out.printf("\nYour total balance is %.2f\n", balanceInquiry(balance));
+			CashDispenser = CashDispenser + totalBalance;
+			
+	    	System.out.println("\nPress 1 to Exit Transaction");
+	    	System.out.println("Press 2 to Continue Deposit");
+	    	System.out.println("Input Choice: ");
+	    	double choice = input.nextDouble();
+	    	if(choice == 1){
+	    		break;
+	    	}
     	}
+    	System.out.println("#####################################");
     }
     
     
