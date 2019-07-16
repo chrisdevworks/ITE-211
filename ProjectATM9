@@ -23,8 +23,8 @@ public class ProjectATM {
     			case BALANCE_INQUIRY:
     				System.out.println("\n#####################################");
     				System.out.println("######## Balance Information ########");
-    				System.out.println("#####################################\n\n");
-    				System.out.printf("Total balance: %.2f\n\n", totalBalance);
+    				System.out.println("#####################################\n");
+    				System.out.printf("Your total balance is %.2f\n", totalBalance);
     				while(true){
     					System.out.println("\nPress 1 to EXIT:");
     					double choice = input.nextDouble();
@@ -90,8 +90,8 @@ public class ProjectATM {
     	double withdraw = 0;
     	while(true){
     		System.out.println("#####################################");
-    		System.out.println("######## Withdrawal Information ########");
-    		System.out.println("#####################################\n\n");
+    		System.out.println("###### Withdrawal Information #######");
+    		System.out.println("#####################################\n\n\n");
     		System.out.println("Please input a withdraw amount: ");
     		withdraw = input.nextDouble();
 	    	System.out.println("\n#####################################");
@@ -124,7 +124,7 @@ public class ProjectATM {
     	while(true){
     		System.out.println("#####################################");
     		System.out.println("######## Deposit Information ########");
-    		System.out.println("#####################################");
+    		System.out.println("#####################################\n\n\n");
 	    	System.out.println("Please input a deposit amount: ");
 	    	amount = input.nextDouble(); 
 	    	System.out.println("\n#####################################");
