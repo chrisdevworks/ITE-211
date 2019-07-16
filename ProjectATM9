@@ -14,20 +14,17 @@ public class ProjectATM {
     
     // Transaction
     public void performTransactions(){
-    	
-    	System.out.println("Welcome!");
 
     	boolean userExit = false; //user has not chosen to exit
     	
     	//loop while user has not chosen option to exit system
     	while( !userExit ){
     		int mainMenuSelection = displayMainMenu(); // return 1, 2, 3, 4
-    		
     		switch( mainMenuSelection ){
     			case BALANCE_INQUIRY:
-    				System.out.println("#####################################");
-    				System.out.println("#####################################");
-    				System.out.println("Balance Information\n\n");
+    				System.out.println("\n#####################################");
+    				System.out.println("\n######## Balance Information ########");
+    				System.out.println("\n#####################################\n\n");
     				System.out.printf("Total balance: %.2f\n\n", totalBalance);
     				while(true){
     					System.out.println("\nPress 1 to EXIT:");
@@ -36,17 +33,21 @@ public class ProjectATM {
     						break;
     					}
     				}
-    				
+    				System.out.println("\n\n#####################################");
     				break;
     			/*	
     			case WITHDRAW:
     				availableBalance = Withdrawal(totalBalance, CashDispenser);
     				balanceInquiry(availableBalance);
+    				System.out.println("\n\n#####################################");
     				break;
     			*/		
-    			case DEPOSIT:
-    				amount = input.nextDouble();
-    				deposit(amount);
+    			case DEPOSIT:    	
+    				System.out.println("\n#####################################");
+    				System.out.println("\n######## Deposit Information ########");
+    				System.out.println("\n#####################################\n\n");
+    				deposit();
+    				System.out.println("\n\n#####################################");
     				break;
     			
     			case EXIT:
@@ -66,8 +67,9 @@ public class ProjectATM {
     // MAIN MENU *
     public int displayMainMenu(){
     	int Input;
-    	
-    	System.out.println("Main Menu:");
+    	System.out.println("#####################################");
+    	System.out.println("########      Main Menu:     ########");
+    	System.out.println("#####################################\n");
     	System.out.println("1 - View my balance");
     	System.out.println("2 - Withdraw cash");
     	System.out.println("3 - Deposit funds");
@@ -137,14 +139,21 @@ public class ProjectATM {
     }
     */
     // DEPOSIT ***
-    public void deposit(double amount){
-    	System.out.println("Please input a withdrawal amount: ");
+    public void deposit(){
+    	System.out.println("Please input a deposit amount: ");
     	amount = input.nextDouble(); 
 		System.out.printf("\nYou have deposited %.2f", amount);
 		double balance = 0;
     	balance = balance + amount;
 		System.out.printf("\nYour total balance is %.2f", balanceInquiry(balance));
 		CashDispenser = CashDispenser + totalBalance;
+		while(true){
+    		System.out.println("\nPress 1 to EXIT:");
+    		double choice = input.nextDouble();
+    		if(choice == 1){
+    			break;
+    		}
+    	}
     }
     
     
