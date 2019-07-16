@@ -9,7 +9,7 @@ public class ProjectATM {
     private final static int DEPOSIT = 3;
     private final static int EXIT = 4;
     private double CashDispenser = 10000000;
-    private double totalBalance = 0;
+    private double totalBalance = 100000;
     public double amount = 0;
     
     // Transaction
@@ -85,56 +85,47 @@ public class ProjectATM {
     	return Input; // return int
     }
 
+
+
     // WITHDRAW **
     public double Withdrawal(double balance, double dispenser){
     	while(true){
     		System.out.println("\n#####################################");
     		System.out.println("######## Withdrawal Information ########");
     		System.out.println("#####################################\n\n");
-    		System.out.println("1 - View my balance");
-    		System.out.println("2 - Cancel Transaction");
-	    	System.out.println("Please Select Transaction: ");	
-	    	Input = input.nextInt();
-			
-    		switch(Input){
-			case 1:
-				while(withdraw <= balance){
-	    			System.out.println("\nInput amount: ");	
-					withdraw = input.nextDouble();
-					
-					if(withdraw <= balance){
-			    		if(totalBalance > CashDispenser){
-			    			double availableBalance = balance - withdraw;
-			    			System.out.println("Amount Withdraw: %.2f\n", withdraw);
-    						System.out.println("Total Balance: %.2f\n", totalBalance);
-			    			break;
-			    		}
-			    		else{
-			    			System("Insufficient cash available in the ATM.\nPlease choose a smaller amount.");
-			    			break;
-			    		}
-			    	}
-			    	else{
-			    		System("Insufficient funds in your account.\nPlease choose a smaller amount.");
-			    		break;
-			    	}
+    		System.out.println("Please input a withdraw amount: ");
+			withdraw = input.nextDouble();
+			do{
+				if(withdraw <= totalBalance)){
+					if(totalBalance >= CashDispenser){
+					    double availableBalance = balance - withdraw;
+					    System.out.println("Amount Withdraw: %.2f\n", withdraw);
+		    			System.out.println("Total Balance: %.2f\n", totalBalance);
+					   	break;
+					}
+					else{
+					    System("Insufficient cash available in the ATM.\nPlease choose a smaller amount.");
+					    break;
+					    }
+					}
+				else{
+					System("Insufficient funds in your account.\nPlease choose a smaller amount.");
+					break;
 				}
-					
-			case 2:
-				userChoice = 1;
-				System.out.println("\nExiting Transaction...");
-				break;	
-		
-			default:
-				System.out.println("\nInvalid selection. Try again.");	
+			}while(withdraw <= totalBalance)
+			
+			
+			System.out.println("\nPress 1 to Exit Transaction");
+		    System.out.println("Press 2 to Continue Withdraw");
+		    System.out.println("Input Choice: ");
+		    double choice = input.nextDouble();
+			if(choice == 1){
+		    	break;
 			}
-			break;
-    	}
-		
+	    }
+	    System.out.println("#####################################");
+	}
 
-    	
-    	return availableBalance; // return double
-    }
 
     // DEPOSIT ***
     public void deposit(){
