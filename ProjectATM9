@@ -1,0 +1,154 @@
+import java.util.Scanner;
+
+public class ProjectATM {
+	
+	private Scanner input = new Scanner(System.in);
+	
+    private final static int BALANCE_INQUIRY = 1;
+    private final static int WITHDRAW = 2;
+    private final static int DEPOSIT = 3;
+    private final static int EXIT = 4;
+    private double CashDispenser = 10000000;
+    private double totalBalance = 0;
+    public double amount = 0;
+    
+    // Transaction
+    public void performTransactions(){
+    	
+    	System.out.println("Welcome!");
+
+    	boolean userExit = false; //user has not chosen to exit
+    	
+    	//loop while user has not chosen option to exit system
+    	while( !userExit ){
+    		int mainMenuSelection = displayMainMenu(); // return 1, 2, 3, 4
+    		
+    		switch( mainMenuSelection ){
+    			case BALANCE_INQUIRY:
+    				System.out.println("\nBalance Information\n");
+    				System.out.printf("Total balance: %.2f\n", totalBalance);
+    				break;
+    				
+    			case WITHDRAW:
+    				availableBalance = Withdrawal(totalBalance, CashDispenser);
+    				balanceInquiry(availableBalance);
+    				break;
+    					
+    			case DEPOSIT:
+    				amount = input.nextDouble();
+    				deposit(amount);
+    				break;
+    			
+    			case EXIT:
+    				System.out.println("Exiting the system...");
+    				userExit = true;
+    				System.out.println("\nThank you! Goodbye!");
+    				break;
+    			
+    			default:
+    				System.out.println("\nYou did not enter a valid selection. Try Again.");
+    				break;
+    		}
+    	}
+    }
+    
+    
+    // MAIN MENU *
+    public int displayMainMenu(){
+    	int Input;
+    	
+    	System.out.println("\nMain Menu:");
+    	System.out.println("1 - View my balance");
+    	System.out.println("2 - Withdraw cash");
+    	System.out.println("3 - Deposit funds");
+    	System.out.println("4 - Exit");
+    	System.out.println("\n\n\n\n");
+    	
+    	// Loop until user choice is 1-4
+    	System.out.println("\nSelect a transaction: ");
+    	do{
+    		Input = input.nextInt();
+    		if( Input < 1 || Input > 4){
+    			System.out.println("\nYou did not enter a valid selection. Try again.");
+    		}
+    	}while( Input < 1 || Input > 4 );
+    	
+    	return Input; // return int
+    }
+    /*
+    // WITHDRAW **
+    public double Withdrawal(double balance, double dispenser){
+    	double withdraw = 0;
+    	System.out.println("\nWithdrawal Menu:");
+    	System.out.println("1 - View my balance");
+    	System.out.println("2 - Cancel Transaction");
+    	
+    	while( userChoice == 0){
+	    	System.out.println("Please Select Transaction: ");	
+	    	userChoice = input.nextInt();
+			
+    		switch(Input){
+			case 1:
+				while(withdraw <= balance){
+	    			System.out.println("\nInput amount: ");	
+					withdraw = input.nextDouble();
+					
+					if(withdraw <= balance){
+			    		if(totalBalance > CashDispenser){
+			    			double availableBalance = balance - withdraw;
+			    			System.out.println("Amount Withdraw: %.2f\n", withdraw);
+    						System.out.println("Total Balance: %.2f\n", totalBalance);
+			    			break;
+			    		}
+			    		else{
+			    			System("Insufficient cash available in the ATM.\nPlease choose a smaller amount.");
+			    			break;
+			    		}
+			    	}
+			    	else{
+			    		System("Insufficient funds in your account.\nPlease choose a smaller amount.");
+			    		break;
+			    	}
+				}
+					
+			case 2:
+				userChoice = 1;
+				System.out.println("\nExiting Transaction...");
+				break;	
+		
+			default:
+				System.out.println("\nInvalid selection. Try again.");	
+			}
+    	}
+		
+
+    	
+    	return availableBalance; // return double
+    }
+    */
+    // DEPOSIT ***
+    public double deposit(double amount){
+    	System.out.println("Please input a withdrawal amount: ");
+    	amount = input.nextDouble(); 
+		System.out.printf("\nYou have deposited %.2f", amount);
+		
+    	double balance = balance + amount;
+		System.out.printf("\nYour total balance is %.2f", balanceInquiry(balance));
+		
+    	double CashDispenser = CashDispenser + totalBalance;
+    }
+    
+    
+    
+    
+    
+    
+    // BALANCE ****
+    public double balanceInquiry(double balance){ 
+    	double totalBalance = totalBalance + balance;	
+    	return totalBalance;
+    }
+    
+    
+    
+}// END CLASS
