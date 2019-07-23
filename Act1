@@ -1,0 +1,21 @@
+
+/**
+ * @(#)ActivityMain.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/22
+ */
+
+
+public class ActivityMain {
+
+    public static void main(String args[]) {
+    	Activity myActivity = new Activity();
+    	
+    	int[] arr = new int[5];
+    		
+    	myActivity.DuplicateElimination(arr); //User Input
+ 
+    }
+}
