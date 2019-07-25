@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+public class Activity {
+	
+	Scanner input = new Scanner(System.in);
+    
+    public void DuplicateElimination(int[] num){
+    		
+    		//INPUT
+    		for(int i=0; i<num.length; i++){
+	    		
+	    		
+	    		while(true){
+	    			System.out.printf("Input array %d:\t", i+1);
+	    			num[i]= input.nextInt();
+	    			if(num[i]>=10 && num[i]<=100){
+	    				break;
+	    			}
+	    			else if(num[i]<10){
+	    				System.out.println("#### Input number must be greater than 10!\n#### Try again!");
+	    			}
+	    			else if(num[i]>100){
+	    				System.out.println("#### Input number must be less than 100!\n#### Try again!");
+	    			}
+	    			else {
+	    				System.out.println("#### Please input a number!\n#### Try again!");
+	    			}
+	    		}
+    		}
+    		//DUPLICATE CHECK
+    		
+			int[] count = new int[5];
+
+    		for(int i = 0; i < num.length; i++){
+    			for(int j = i + 1; j < num.length; j++){
+    				if(num[i] == num[j]){
+		    			count[j]=0;
+    				}
+    				else{
+    					count[j]=num[i];
+    				}
+    			}
+    		}
+    		
+    		// DISPLAY
+    		boolean start = true;
+    		
+    		do{
+    			for(int i = 0; i < num.length; i++){
+    				if(count[i]==num[i]){
+    					System.out.printf("%d\t", count[i]);
+    				}
+    				if(count[i]==0){
+    					break;
+    				}
+    			}
+    			
+    			break;
+    			
+    		}while(true);
+    /*
+    		//ELIMINATION	
+
+			for(int i=0;i<5;i++){
+				for(int j=i+1;j<5;j++){
+		    		if(num[i]==num[j]){
+		    			if(count[i]==0){
+		    				count[i]+=1+i;
+		    			}
+					}
+					else{
+    					count[i]+=0;
+					}
+				}
+				if(count[i]==0){
+    				System.out.printf("%d\t", num[i]);
+				}
+	    	}
+	    	*/
+//////////////////////////	    		
+	}
+}
