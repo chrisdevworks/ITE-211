@@ -1,0 +1,125 @@
+import java.util.Scanner;
+
+public class Activity {
+	
+	Scanner input = new Scanner(System.in);
+    
+    public void DuplicateElimination(int[] num){
+    		// #BULOK
+    		//INPUT
+    		
+    		/*
+    		for(int i=0; i<num.length; i++){
+	    		
+	    		
+	    		while(true){
+	    			System.out.printf("Input array %d:\t", i+1);
+	    			num[i]= input.nextInt();
+	    			if(num[i]>=10 && num[i]<=100){
+	    				break;
+	    			}
+	    			else if(num[i]<10){
+	    				System.out.println("#### Input number must be greater than 10!\n#### Try again!");
+	    			}
+	    			else if(num[i]>100){
+	    				System.out.println("#### Input number must be less than 100!\n#### Try again!");
+	    			}
+	    			else {
+	    				System.out.println("#### Please input a number!\n#### Try again!");
+	    			}
+	    		}
+    		}
+    		*/
+    		
+    		//DUPLICATE CHECK
+    		/*j = i + 1
+    		 *10v20 10v30 10v20 10v10*
+    		 *20v30 20v20* 20v10
+    		 *30v20 30v10
+    		 *20v10
+    		 *
+    		 *j = i
+    		 *10v20 10v30 10v20 10v10
+    		 *20v20 20v30 20v30 20v10
+    		 *30v30
+    		 *
+    		 *
+    		 */
+    		
+			int[] count = new int[5];
+/*
+    		for(int i = 0; i < num.length; i++){
+    			for(int j = i+1 ; j < num.length; j++){
+    				System.out.printf("i[%d] j[%d]\n", i, j);
+    				if(num[i] == num[j]){
+		    			count[j]=0;
+    					System.out.printf("F count[%d] = %d\n", j, count[j]);
+    					System.out.printf("F num[%d] = %d\n\n", j, num[j]);
+    					
+    					System.out.printf("num[%d] = %d\n", i, num[i]);
+    					System.out.printf("num[%d] = %d\n\n", j, num[j]);
+    					
+    					System.out.println("#############");
+    				}
+    				else{
+    					count[j]=num[i];
+    					System.out.printf("E count[%d] = %d\n", j, count[j]);
+    					System.out.printf("E num[%d] = %d\n\n", j, num[j]);
+    					
+    					System.out.printf("num[%d] = %d\n", i, num[i]);
+    					System.out.printf("num[%d] = %d\n\n", j, num[j]);
+    					System.out.println("##############");
+    				}
+    			}
+    			
+    			System.out.println("##############################");
+    		}
+    		
+    		// DISPLAY
+    		boolean start = true;
+    		
+    			for(int i = 1; i < num.length; i++){
+    				if(count[i]==num[i]){
+    					System.out.printf("%d\t", count[i]);
+    				}
+    				if(count[i]==0){
+    					break;
+    				}
+    			}
+
+  
+    		//ELIMINATION	
+*/
+		int[] dupli = new int[5];
+		for(int i=0;i<5;i++){
+				for(int j=0;j<5;j++){
+		    		if(num[i]==num[j]){
+		    			count[i]=num[j];
+		    			dupli[i]=num[i];
+		    			
+					}
+					else {
+    					count[i]=num[i];
+		    			dupli[i]+=0;
+					}
+    				System.out.printf("\ni[%d] j[%d]\n", i, j);
+					System.out.printf("num[%d] = %d\n", i, num[i]);
+    				System.out.printf("num[%d] = %d\n", j, num[j]);
+    				System.out.printf("--terminate[%d] = %d --\n", i, dupli[i]);
+    				
+    				if(dupli[i]==0 || count[j]!=num[j]){
+    					System.out.printf("\n# %d #\n", count[i]);
+					}
+					
+    				System.out.println("#############");
+
+				}
+				
+    		//	System.out.printf("\n\n###########\ncount[%d]=%d\t\n###########\n", i, count[i]);
+				
+    			System.out.println("\n###########################");
+	    	}
+	  
+//////////////////////////	    		
+	}
+}
