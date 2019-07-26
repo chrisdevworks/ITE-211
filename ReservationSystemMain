@@ -1,0 +1,49 @@
+/**
+ * @(#)ReservationSystemMain.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/25
+ */
+import java.util.Scanner;
+
+public class ReservationSystemMain {
+	
+	Scanner input = new Scanner(System.in);
+	
+    public static void main(String[] args) {
+    	ReservationSystemClass myReservation = new ReservationSystemClass();
+    	
+    	myReservation.Reservation();
+    	do{
+    		while(true){
+	        	System.out.println( "Please type:\n\t1 for First Class\n\t2 for Economy Class\n\t0 to quit\n");
+	        	int action = input.nextInt();
+	        
+		        if(action==1){
+		        	 System.out.printf( "Thank you. You have chosen %d class.", action );
+		        	 myReservation.assignSeats(action);
+		        	
+		        }
+		        else if(action==2){
+		        	 System.out.printf( "Thank you. You have chosen %d class.", action );
+		        	 myReservation.assignSeats(action);
+		        	 
+		        }
+		        else if(action==0){
+	                System.out.print("You are exiting the application. Thank you.\n");
+		        	break;
+		        }
+		        else{
+	                System.out.print("Input a right number\n");
+		        }
+       		}
+	        System.out.print("Do you want more seats?\n");
+    	}while(action!=0)
+    		
+    		
+ /////////////////////////         
+    } // END MAIN
+ ////////////////////////  
+ }  //  END CLASS
+    
