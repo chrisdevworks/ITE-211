@@ -1,0 +1,79 @@
+/**
+ * @(#)ReservationSystemClass.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/7/25
+ */
+import java.util.Scanner;
+
+public class ReservationSystemClass {
+	
+	Scanner input = new Scanner(System.in);
+
+	private final int  NUMBER_OF_SEATS = 10; 
+    private boolean[] seats;
+    private int firstSeat;
+    private int secondSeat;
+    private int firstClassCounter;//counter for first class
+    private int secondClassCounter;//counter for second class
+    Random randomNumbers = new Random();
+	
+
+	public String assignSeats( int seatClass ){     
+        String seatFlag = ' ';
+        firstSeat = generateClassSeats( seatClass );//pass the user choice
+         
+        //check that I don't reassign the seat
+                //if seats counter are less than the amout of seats available
+        if((firstClassCounter <= seats.lenght / 2) || (secondClassCounter <= seats.lenght / 2)){
+            firstSeat = checkSeat( firstSeat, seatClass );
+            //assign the seat
+            seats[ firstSeat ] = true;      
+            //determine 1st or 2nd class
+            if( seatClass == 1 ){
+                System.out.printf("Your seat number is %d and it is in first class", firstSeat + 1 );
+                firstClassCounter++;//increase first class counter
+            }
+            else if( seatClass == 2 ){
+                System.out.printf("Your seat number is %d and it is in second class", firstSeat + 1 );
+                secondClassCounter++;//increase second class counter
+            }
+        }   
+ 
+         
+        //if one class is full
+        if( ( firstClassCounter > seats.lenght / 2 ) && ( secondClassCounter > seats.lenght / 2 ) ){
+            System.out.printf("\nThe plane is full sorry");
+            seatFlag = "full";
+        }       
+         
+        return seatFlag;    
+    }//end of assignFirstSeats
+	
+	private int generateClassSeats( int userChoice ){
+        //generate random number between 0 and 9 if the maximum number of seats is 10
+        if( userChoice == 1 ){
+                        //half of the size of the array, hence first class
+            int theSeat = randomNumbers.nextInt( ( seats.length - 1 ) / 2 );
+        }
+        else if( userChoice == 2 ){
+                        //second half of the size of the array, hence second class
+            int theSeat = 1 + randomNumbers.nextInt( NUMBER_OF_SEATS - 1 / 2 );
+        }
+         
+        return theSeat;
+    }
+    
+    private int checkSeat(int seatNumber, int seatClass){
+         
+        boolean theSeat = seats[ seatNumber ];
+        while(theSeat){
+            seatNumber = generateClassSeats( seatClass );
+            theSeat = seats[ seatNumber ];
+        }
+        return seatNumber;
+    }
+	
+//////////////END CLASS////////////////  
+}
