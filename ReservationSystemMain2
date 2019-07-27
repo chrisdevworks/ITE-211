@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class ReservationSystemMain {
+	
+	Scanner input = new Scanner(System.in);
+	
+    public static void main(String[] args) {
+    	ReservationSystemClass myReservation = new ReservationSystemClass();
+    	System.out.println("———————|————————————————————————————————————|————————");
+    	System.out.println("———————| WELCOME TO THE AIRLINE RESERVATION |————————");
+    	System.out.println("———————|————————————————————————————————————|————————");
+    	System.out.println("******* We can occupy up to 10 reservations *********");
+    	System.out.println("**** Choose between FIRST CLASS or ECONOMY CLASS ****");
+    	System.out.println("—————————————————————————————————————————————————————");
+    	myReservation.start();
+    	
+ /////////////////////////         
+    } // END MAIN
+ ////////////////////////  
+ }  //  END CLASS
