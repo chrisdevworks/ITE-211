@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class ReservationSystemMain {
+	
+	Scanner input = new Scanner(System.in);
+	
+    public static void main(String[] args) {
+    	ReservationSystemClass myReservation = new ReservationSystemClass();
+    	
+    	myReservation.start();
+    	
+ /////////////////////////         
+    } // END MAIN
+ ////////////////////////  
+ }  //  END CLASS
