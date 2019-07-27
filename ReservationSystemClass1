@@ -1,0 +1,162 @@
+import java.util.Scanner;
+
+public class ReservationSystemClass {
+	
+	boolean[] isOccupied = new boolean[11]; 
+    Scanner input = new Scanner(System.in);
+    int[] vacant = new int[12];
+	
+    //////// RUN LOOP ///////
+    public void start()
+    {       
+        while ( true )
+        {
+            makeReservation();
+        }   
+    }
+   /////// RESERVATION ///////
+
+     public void makeReservation()
+    {
+    	do{
+	        System.out.println("Please type 1 for First Class or 2 for Economy: ");
+	        int section = input.nextInt();
+	        if ( section == 1 ){
+	            firstClassSeat(); //run firstClassSeat
+	            break;
+	        }
+	        else if ( section == 2){
+	        	economyClassSeat(); //run economyClassSeat
+	        	break;
+	        }
+	        else
+	        {
+	           System.out.println("Wrong Input");
+	        }
+    	}while(true);
+    }
+    
+    /////// FIRST CLASS ////////
+
+    public void firstClassSeat() // assign a first class seat
+    {
+        for ( int count = 1; count <= 5; count++ )
+        {
+            if ( !isOccupied[count] )  // if false, then a seat is available for assignment
+            {
+                isOccupied[count] = true;  // assign seat
+                System.out.printf("First Class. Seat #%d is now occupied...\n", count);
+                System.out.printf("There are %d seats available for booking...\n", 5-count);
+                
+                seatDisplay(count);
+                /*
+                vacant[count]+=1;
+                for(int i=1; i<=5; i++){
+                	if(vacant[i]==1)
+                		System.out.print("(X)");
+                	else{
+                		System.out.printf("(%d)", i);
+                	}
+                }
+                
+                */
+                System.out.printf("\n\n");
+                break;
+            }
+            else if ( isOccupied[5]) // If seating[5] is true then first class is fully booked
+            {
+                if ( isOccupied[10]) // If seating[10] is true then whole flight is fully booked
+                {
+                    System.out.println("Sorry, flight fully booked. Next flight is in 3 hours.");
+                }
+                else // ask passenger if they would like an economy ticket instead
+                {
+                    System.out.println("First Class is fully booked. Would you like Economy? 1 for Yes 2 for No");
+                    int choice = input.nextInt();
+                    if ( choice == 1 )
+                    {
+                        economyClassSeat();
+                        start();
+                    }
+                    else
+                    {
+                        System.out.println("Next flight is in 3 hours.");
+                        System.exit(0);
+                    }
+                }
+            }
+        }
+    }   
+    	
+    	
+    /////// ECONOMY ////////
+
+    public void economyClassSeat() // assign an economy seat
+    {
+        for ( int count = 6; count <= 10; count++ )
+        {
+            if ( !isOccupied[count] ) // if false, then a seat is available for assignment
+            {
+                isOccupied[count] = true; // assign seat
+                System.out.printf("\nEconomy. Seat #%d is now occupied...\n", count);
+                System.out.printf("There are %d seats available for booking...\n", 10-count);
+                seatDisplay(count);
+/*
+                vacant[count]+=1;
+                for(int i=6; i<=10; i++){
+                	if(vacant[i]==1)
+                		System.out.print("(X)");
+                	else{
+                		System.out.printf("(%d)", i);
+                	}
+                }
+                */
+                System.out.printf("\n\n");
+                break;
+            }
+            else if ( isOccupied[10] == true ) // If seating[10] is true then economy is fully booked
+            {
+                if ( isOccupied[5] == true) // If seating[5] is true then first class (and therefore whole flight) is fully booked
+                {
+                    System.out.println("\nSorry, flight fully booked. Next flight is in 3 hours.");
+                    System.exit(0);
+                }
+                else // ask if passenger would like a first class ticket instead
+                {
+                    System.out.print("\nEconomy is fully booked. Would you like First Class?\n1 for Yes / 2 for No: ");
+                    int choice = input.nextInt();
+                    if ( choice == 1 )
+                    {
+                        firstClassSeat();
+                        start();
+                    }
+                    else
+                    {
+                        System.out.println("\nNext flight is in 3 hours");
+                        System.exit(0);
+                    }
+                }
+            }
+        }
+    } 
+    	
+    private void seatDisplay(int num){
+    	vacant[num]+=1;
+        for(int i=1; i<=10; i++){
+        	if(i==1){
+        		System.out.print("First Class:\t ");
+        	}
+        	if(vacant[i]==1){
+        		
+        		System.out.print("(X)");
+        	}
+        	else{
+        		System.out.printf("(%d)", i);
+        	}
+        	if(i==5){
+        		System.out.println("");
+        	}
+        }
+    }	
+//////////////END CLASS    
+}
