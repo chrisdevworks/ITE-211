@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class ArrayAverageMain {
+	
+    public static void main(String[] args) {
+    	
+    	ArrayAverageClass Average = new ArrayAverageClass();
+    	
+    	Average.Calculation();
+    }
+/// END MAIN    
+}
