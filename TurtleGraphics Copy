@@ -1,0 +1,106 @@
+import java.util.Scanner;
+
+public class Turtle
+{
+	private static int TheArray[][] = new int [20][20];  // The 20 by 20 Array
+	private static int InitialPositionX = 0;  // Horizontal position initially set to 0
+	private static int InitialPositionY = 0;  // Vertical position initially set to 0
+	private static int NewPositionX = 0;  // User indicates the desired horizontal position
+	private static int NewPositionY = 0;  // User indicates desired vertical position
+	private static int Direction = 0;  // Initial direction
+	private static boolean PenDown = false;  // Pen is raised
+	private static int GetMenu;
+	Scanner in = new Scanner(System.in);
+
+
+	public static void main(String[] args)
+	{
+	Scanner in = new Scanner(System.in);
+
+		do
+		{
+		System.out.println("Please Select From One Of The Following Commands:\n");  // Commands To Choose From
+		System.out.println("1: Pen Up");
+		System.out.println("2: Pen Down");
+		System.out.println("3: Direction");
+		System.out.println("4: Move Forward");
+		System.out.println("5: Print Data");
+		System.out.println("6: End of Data\n");
+		GetMenu = in.nextInt();  // Selects an option from 1-6 that takes it to the corresponding option
+
+			switch(GetMenu)
+			{
+				case 1: System.out.println("Pen Has Been Set To 'Up' Position\n");
+						PenDown = false;
+						break;
+				case 2: System.out.println("Pen Has Been Set To 'Down' Position\n");
+						PenDown = true;
+						break;
+				case 3: System.out.println("Please Specify Your Desired Direction\n");
+						FindDirection();
+						break;
+				case 4: System.out.println("Moving Forward...Please Enter Desired Value\n");
+						Movement();
+						break;
+				case 5: System.out.println("Printing Current Data Thus Far...\n");
+						PrintArray();  // Prints the final array
+						break;
+				case 6: System.out.println("Ending Program, Goodbye\n");
+						break;
+			}
+		}
+			while(GetMenu!=7);
+	}
+
+	public static void PrintArray()
+	{
+		for(int i=0;i<TheArray.length;i++)
+		{
+			for(int j=0;j<TheArray.length;j++)
+				System.out.print(TheArray[j][i] + " ");
+				System.out.println();
+		}
+	}
+
+	public static void Movement()
+	{
+	Scanner in = new Scanner(System.in);
+		int Move, Next, x = 0;
+
+		Move = in.nextInt();
+
+		if(Direction == 0)
+		{
+			Next = x + Move;
+			for(NewPositionX=0;NewPositionX<Next;NewPositionX++)
+			TheArray[NewPositionX][NewPositionY] = 1;
+		}
+	}
+
+	public static void FindDirection()
+	{
+	Scanner in = new Scanner(System.in);
+		System.out.println("1: Turn Right");
+		System.out.println("2: Turn Left");
+		System.out.println("3: Turn Up");
+		System.out.println("4: Turn Down\n");
+		int DirectionInput = in.nextInt();
+
+		switch (DirectionInput)
+		{
+			case 1: TheArray[NewPositionX][NewPositionY] = 1;
+					NewPositionY++;
+					break;
+			case 2: TheArray[NewPositionX][NewPositionY] = 1;
+					NewPositionY--;
+					break;
+			case 3: TheArray[NewPositionX][NewPositionY] = 1;
+					NewPositionX++;
+					break;
+			case 4: TheArray[NewPositionX][NewPositionY] = 1;
+					NewPositionX--;
+					break;
+		}
+	}
+
+}
