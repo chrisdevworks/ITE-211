@@ -1,0 +1,177 @@
+
+
+import java.util.Scanner;
+
+public class TurtleGraphicsClass {
+
+	//CHOICES
+    private boolean penUp = true;
+   	private final static int LEFT = 3;
+    private final static int RIGHT = 4;
+    private final static int DOWN = 5;
+    private final static int UP = 6;
+    
+	private static int InitialPositionX = 0;  // Horizontal position initially set to 0
+	private static int InitialPositionY = 0;  // Vertical position initially set to 0
+	private static int NewPositionX = 0;  // User indicates the desired horizontal position
+	private static int NewPositionY = 0;  // User indicates desired vertical position
+	private static int Direction = 0;  // Initial direction
+	private static boolean PenDown = false;  // Pen is raised
+	private static int GetMenu;
+
+    private int direction = 0;
+    
+    // TURTLE POSITION
+    int initialPos = 0;
+    int currentPos = 0;	
+    
+    // TABLE 	
+    int[3][3] arr = {
+    	{0,0,0},
+    	{0,0,0},
+    	{0,0,0}
+    };
+    
+////// DISPLAY
+	public void display(){
+		for(int i=0; i<arr.length; i++){
+			for(int j=0; j<arr[i].length; j++){
+				System.out.printf("%d",arr[i][j]);
+			}
+		}
+	}
+
+
+    
+/////////////////// PEN POSITION ///////////////////
+//DOWN
+	public void penDown()
+	{
+	    penUp = false;
+	}
+	
+//UP
+	public void penUp()
+	{
+	    penUp = true;
+	}
+	
+
+
+////////////////// MOVE DIRECTION ///////////////////
+
+/// TURN RIGHT
+	public void turnRight()
+	{
+	    switch(direction)
+	    {
+	        case UP:
+	                direction = RIGHT;
+	                break;
+	        case DOWN:
+	                direction = LEFT;
+	                break;
+	        case LEFT:
+	                direction = UP;
+	                break;
+	        case RIGHT:
+	                direction = DOWN;
+	                break;
+	        default:
+	                break;
+	
+	    }   
+	}
+	
+/// TURN LEFT	
+	public void turnLeft()
+	{
+	    switch(direction)
+	    {
+	        case UP:
+	                direction = LEFT;
+	                break;
+	        case DOWN:
+	                direction = RIGHT;
+	                break;
+	        case LEFT:
+	                direction = DOWN;
+	                break;
+	        case RIGHT:
+	                direction = UP;
+	                break;
+	        default:
+	                break;
+	
+	    }
+	} 
+
+/// TURN FORWARD
+public void forward(int amount)
+{
+
+    if(penUp)
+        return;
+
+    if (direction == DOWN)
+    {
+        drawLine(Color.red, xPos, yPos, xPos, yPos + amount );
+        yPos = yPos + amount;
+    }
+
+    else if (direction == UP)
+    {
+        drawLine(Color.red, xPos, yPos, xPos, yPos - amount );
+        yPos = yPos - amount;
+    }
+
+    else if (direction == LEFT)     
+    {
+        drawLine(Color.red, xPos, yPos, xPos - amount, yPos );
+        xPos = xPos - amount;
+    }
+
+    else if (direction == RIGHT)        
+    {
+        drawLine(Color.red, xPos, yPos, xPos + amount, yPos );
+        xPos = xPos + amount;
+    }
+
+}
+
+/// TURN BACKWARD
+public void backward(int amount)
+{
+    if(penUp)
+        return;
+
+    if (direction == DOWN)
+    {
+        drawLine(Color.red, xPos, yPos, xPos, yPos - amount );
+        yPos = yPos - amount;
+    }
+
+    else if (direction == UP)
+    {
+        drawLine(Color.red, xPos, yPos, xPos, yPos + amount );
+        yPos = yPos + amount;
+    }
+
+    else if (direction == LEFT)     
+    {
+        drawLine(Color.red, xPos, yPos, xPos + amount, yPos );
+        xPos = xPos + amount;
+    }
+
+    else if (direction == RIGHT)        
+    {
+        drawLine(Color.red, xPos, yPos, xPos - amount, yPos );
+        xPos = xPos - amount;
+    }
+}
+
+///
+
+ 
+/////END CLASS////    
+}
