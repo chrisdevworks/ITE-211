@@ -1,0 +1,82 @@
+/**
+ * @(#)TurtleGraphicsMain.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/8/5
+ */
+import java.util.Scanner;
+
+public class TurtleGraphicsMain{
+	public static void main (String[] args) {
+		TurtleGraphicsClass TurtleGraphics = new TurtleGraphicsClass();
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Please Select From One Of The Following Commands:\n");  // Commands To Choose From
+		System.out.println("1: Pen Up");
+		System.out.println("2: Pen Down");
+		System.out.println("3: Move Ledt");
+		System.out.println("4: Move Right");
+		System.out.println("5: Move Up");
+		System.out.println("6: Move Down");
+		System.out.println("7: Display");
+		System.out.println("8: Exit\n");
+		
+		do{
+			int choice = displayMainMenu(); // return 1, 2, 3, 4
+			
+			switch(choice){
+				// PEN UP
+				case 1:
+					penDown();
+				
+				// PEN DOWN
+				case 2:
+					penUp();
+					
+				// WALK RIGHT
+				case 3:
+					turnRight();
+					
+				// WALK LEFT
+				case 4:
+					turnLeftt();
+					
+				// WALK UP
+				case 5:
+					turnUP();
+					
+				// WALK DOWN
+				case 6:
+					turnDown()
+						
+				// DISPLAY ARRAY
+				case 7:
+					userExit = true;
+					display();
+					 
+				// SYSTEM EXIT	
+				case 8:
+					System.out.println("\nExiting the system...");
+					userExit = true;
+					System.out.println("\nThank you! Goodbye!");
+					break;
+				
+				// INVALID INPUT
+				default:
+					System.out.println("\nYou did not enter a valid selection. Try Again.");
+					break;	
+				
+			
+			}// END SWITCH
+		}while(!userExit);// END WHILE
+			
+    
+    
+    
+    
+    
+    ///END MAIN
+	}
+///END CLASS	
+}
