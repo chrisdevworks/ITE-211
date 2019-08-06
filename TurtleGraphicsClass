@@ -1,0 +1,198 @@
+
+
+import java.util.Scanner;
+
+public class TurtleGraphicsClass {
+
+    public TurtleGraphicsClass() {
+    	private int xPos = 0, yPos=0;
+	    private boolean penUp = true;
+	    private final static int DOWN = 0;
+	    private final static int UP = 1;
+	    private final static int LEFT = 2;
+	    private final static int RIGHT = 3;
+	    private int direction = DOWN;
+    }
+    
+//////    
+     public void actionPerformed(ActionEvent arg0) {
+     	if(console.getText().contains("penup")) {
+			penUp();
+		}
+
+		else if (console.getText().contains("pendown")) {
+			penDown();
+		}
+		
+	    else if (console.getText().contains("turnleft")) {
+	    	JOptionPane.showMessageDialog(console, "turnleft works");
+	    }
+	
+	    else if (console.getText().contains("turnright")) {
+	       JOptionPane.showMessageDialog(console, "turnright works");
+                    }
+
+                    else if (console.getText().contains("forward")) {
+                        forward(direction);
+                    }
+
+                    else if (console.getText().contains("backward")) {
+                       JOptionPane.showMessageDialog(console, "backward works");
+                    }
+
+                    else if (console.getText().contains("black")) {
+                       JOptionPane.showMessageDialog(console, "black works");
+                    }
+
+                    else if (console.getText().contains("green")) {
+                       JOptionPane.showMessageDialog(console, "green works");
+                    }
+
+                    else if (console.getText().contains("red")) {
+                        JOptionPane.showMessageDialog(console, "red works");
+                    }
+
+                    else if (console.getText().contains("reset")) {
+                        JOptionPane.showMessageDialog(console, "reset works");
+                    }
+
+                    else {
+                        JOptionPane.showMessageDialog(console, "Invalid command, try again");
+                    }
+            }
+    };
+}
+
+
+    
+/////////////////// PEN POSITION ///////////////////
+//DOWN
+	public void penDown()
+	{
+	    penUp = false;
+	}
+	
+//UP
+	public void penUp()
+	{
+	    penUp = true;
+	}
+    
+
+////////////////// MOVE DIRECTION ///////////////////
+
+/// TURN RIGHT
+	public void turnRight()
+	{
+	    switch(direction)
+	    {
+	        case UP:
+	                direction = RIGHT;
+	                break;
+	        case DOWN:
+	                direction = LEFT;
+	                break;
+	        case LEFT:
+	                direction = UP;
+	                break;
+	        case RIGHT:
+	                direction = DOWN;
+	                break;
+	        default:
+	                break;
+	
+	    }   
+	}
+	
+/// TURN LEFT	
+	public void turnLeft()
+	{
+	    switch(direction)
+	    {
+	        case UP:
+	                direction = LEFT;
+	                break;
+	        case DOWN:
+	                direction = RIGHT;
+	                break;
+	        case LEFT:
+	                direction = DOWN;
+	                break;
+	        case RIGHT:
+	                direction = UP;
+	                break;
+	        default:
+	                break;
+	
+	    }
+	} 
+
+/// TURN FORWARD
+public void forward(int amount)
+{
+
+    if(penUp)
+        return;
+
+    if (direction == DOWN)
+    {
+        drawLine(Color.red, xPos, yPos, xPos, yPos + amount );
+        yPos = yPos + amount;
+    }
+
+    else if (direction == UP)
+    {
+        drawLine(Color.red, xPos, yPos, xPos, yPos - amount );
+        yPos = yPos - amount;
+    }
+
+    else if (direction == LEFT)     
+    {
+        drawLine(Color.red, xPos, yPos, xPos - amount, yPos );
+        xPos = xPos - amount;
+    }
+
+    else if (direction == RIGHT)        
+    {
+        drawLine(Color.red, xPos, yPos, xPos + amount, yPos );
+        xPos = xPos + amount;
+    }
+
+}
+
+/// TURN BACKWARD
+public void backward(int amount)
+{
+    if(penUp)
+        return;
+
+    if (direction == DOWN)
+    {
+        drawLine(Color.red, xPos, yPos, xPos, yPos - amount );
+        yPos = yPos - amount;
+    }
+
+    else if (direction == UP)
+    {
+        drawLine(Color.red, xPos, yPos, xPos, yPos + amount );
+        yPos = yPos + amount;
+    }
+
+    else if (direction == LEFT)     
+    {
+        drawLine(Color.red, xPos, yPos, xPos + amount, yPos );
+        xPos = xPos + amount;
+    }
+
+    else if (direction == RIGHT)        
+    {
+        drawLine(Color.red, xPos, yPos, xPos - amount, yPos );
+        xPos = xPos - amount;
+    }
+}
+
+///
+
+ 
+/////END CLASS////    
+}
