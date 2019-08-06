@@ -1,0 +1,56 @@
+/**
+ * @(#)TurtleGraphicsMain.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/8/5
+ */
+import java.util.Scanner;
+
+public class TurtleGraphicsMain{
+	public static void main (String[] args) {
+		TurtleGraphicsClass TurtleGraphics = new TurtleGraphicsClass();
+		Scanner input = new Scanner(System.in);
+		
+		while(){
+			switch()
+				// PEN UP
+				case 1:
+				
+				// PEN DOWN
+				case 2:
+				
+				// WALK RIGHT
+				case 3:
+				
+				// WALK LEFT
+				case 4:
+				
+				// WALK UP
+				case 5:
+				
+				// WALK DOWN
+				case 6:
+				
+				// DISPLAY ARRAY
+				case 7:
+				
+				// SYSTEM EXIT	
+				case 8:
+				
+				// INVALID INPUT
+				default:
+					System.out.println("\nYou did not enter a valid selection. Try Again.");
+					break;	
+				
+		}
+			
+    
+    
+    
+    
+    
+    ///END MAIN
+	}
+///END CLASS	
+}
