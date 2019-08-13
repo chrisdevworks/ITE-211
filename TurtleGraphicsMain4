@@ -55,8 +55,8 @@ public class TurtleGraphicsMain{
 						
 				// DISPLAY ARRAY
 				case 7:
-					userExit = true;
 					display();
+					userExit = true;
 					 
 				// SYSTEM EXIT	
 				case 8:
