@@ -63,7 +63,7 @@ public class TurtleGraphicsClass {
 /// TURN RIGHT
 	public void turnLeft(penPosition){
 		//check bump
-		if(InitX = 0 && InitX == 4 || InitY == 0 && InitY == 4){
+		if(InitX = 0 || InitX == 4 && InitY == 0 || InitY == 4){
 			System.out.println("Error");
 		}
 		else{
