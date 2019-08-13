@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+public class TurtleGraphicsMain{
+	public static void main (String[] args) {
+		TurtleGraphicsClass TurtleGraphics = new TurtleGraphicsClass();
+		Scanner input = new Scanner(System.in);
+		
+		boolean penPosition = false;
+		boolean userExit = false;
+		
+		System.out.println("Please Select From One Of The Following Commands:\n");  // Commands To Choose From
+		System.out.println("1: Pen Up");
+		System.out.println("2: Pen Down");
+		System.out.println("3: Move Ledt");
+		System.out.println("4: Move Right");
+		System.out.println("5: Move Up");
+		System.out.println("6: Move Down");
+		System.out.println("7: Display");
+		System.out.println("8: Exit\n");
+		
+		do{
+			int choice = displayMainMenu(); // return 1, 2, 3, 4
+			System.out.println("Please Select From One Of The Following Commands:\n");  // Commands To Choose From
+			System.out.println("1: Pen Up");
+			System.out.println("2: Pen Down");
+			System.out.println("3: Direction");
+			System.out.println("4: Move Forward");
+			System.out.println("5: Print Data");
+			System.out.println("6: End of Data\n");
+			
+			switch(choice){
+				// PEN UP
+				case 1:
+					penPosition = false;
+				
+				// PEN DOWN
+				case 2:
+					penPosition = true;
+					
+				// WALK RIGHT
+				case 3:
+					turnRight(penPosition, choice);
+					
+				// WALK LEFT
+				case 4:
+					turnLeftt(penPosition, choice);
+					
+				// WALK UP
+				case 5:
+					turnUP(penPosition, choice);
+					
+				// WALK DOWN
+				case 6:
+					turnDown(penPosition, choice);
+						
+				// DISPLAY ARRAY
+				case 7:
+					userExit = true;
+					display();
+					 
+				// SYSTEM EXIT	
+				case 8:
+					System.out.println("\nExiting the system...");
+					userExit = true;
+					System.out.println("\nThank you! Goodbye!");
+					break;
+				
+				// INVALID INPUT
+				default:
+					System.out.println("\nYou did not enter a valid selection. Try Again.");
+					break;	
+				
+			
+			}// END SWITCH
+		}while(!userExit);// END WHILE
+			
+    
+    
+    
+    
+    
+    ///END MAIN
+	}
+///END CLASS	
+}
