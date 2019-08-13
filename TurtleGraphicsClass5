@@ -1,0 +1,154 @@
+import java.util.Scanner;
+
+public class TurtleGraphicsClass {
+	
+	private Scanner input = new Scanner(System.in);
+
+	//CHOICES
+//    private boolean penUp = true;
+//   	private final static int LEFT = 3;
+//    private final static int RIGHT = 4;
+//    private final static int DOWN = 5;
+//    private final static int UP = 6;
+    
+	private static int initX = 0;  // Horizontal position initially set to 0
+	private static int initY = 0;  // Vertical position initially set to 0
+//	private static int NewPositionX = 0;  // User indicates the desired horizontal position
+//	private static int NewPositionY = 0;  // User indicates desired vertical position
+//	private static int Direction = 0;  // Initial direction
+//	private static boolean PenDown = false;  // Pen is raised
+//	private static int GetMenu;
+//	private static int lastPosition;
+//  private int direction = 0;
+    
+    boolean checkBump = false;
+    
+    // TURTLE POSITION
+    int initialPos = 0; //
+    int currentPos = 0;	//
+    
+    // TABLE 	
+    int[][] arr = {
+    	{0,0,0},
+    	{0,0,0},
+    	{0,0,0}
+    };
+    
+////////////////// MAIN MENU /////////////////////////
+    public int displayMainMenu() {
+    	int choice;
+    	System.out.println("Please Select From One Of The Following Commands:\n");  // Commands To Choose From
+		System.out.println("1: Pen Up");
+		System.out.println("2: Pen Down");
+		System.out.println("3: Move Ledt");
+		System.out.println("4: Move Right");
+		System.out.println("5: Move Up");
+		System.out.println("6: Move Down");
+		System.out.println("7: Display");
+		System.out.println("8: Exit");
+		
+		// Loop until user choice is 1-8
+		do{
+    		choice = input.nextInt();
+    		if( choice < 1 || choice > 8){
+    			System.out.println("\nYou did not enter a valid selection. Try again.");
+    		}
+    	}while( choice < 1 || choice > 8 );
+		System.out.println("");
+    	return choice; // return int
+    }
+    
+////////////////// DISPLAY TABLE //////////////////////
+	public void display(){
+		for(int i=0; i<arr.length; i++){
+			for(int j=0; j<arr[i].length; j++){
+				System.out.printf("%d",arr[i][j]);
+			}
+		}
+	}
+
+
+
+////////////////// MOVE DIRECTION ///////////////////
+
+/// MOVE RIGHT
+	public void moveRight(boolean penPosition){
+		//check right wall
+		if(initX == 2){
+			System.out.println("Error");
+		}
+		else{
+			initX +=1;
+			//check pen
+			if(penPosition == true){
+				arr[initX][initY] = 1;
+			}
+			else{
+				arr[initX][initY] = 0;
+			}
+		}
+	 //////   
+	}
+	
+/// MOVE LEFT	
+	public void moveLeft(boolean penPosition){
+		//check left wall
+		if(initX == 0){
+			System.out.println("Error");
+		}
+		else{
+			initX-=1;
+			//check pen
+			if(penPosition == true){
+				arr[initX][initY] = 1;
+			}
+			else{
+				arr[initX][initY] = 0;
+			}	
+		}
+	    
+	} 
+
+/// MOVE UP
+	public void moveUp(boolean penPosition){
+		//check upper wall
+		if(initY == 0){
+			System.out.println("Error");
+		}
+		else{
+			initY+=1;
+			//check pen
+			if(penPosition == true){
+				arr[initX][initY] = 1;
+			}
+			else{
+				arr[initX][initY] = 0;
+			}	
+		}
+	    
+	} 
+
+/// MOVE DOWN
+	public void moveDown(boolean penPosition){
+		//check bottom wall
+		if(initY == 2){
+			System.out.println("Error");
+		}
+		else{
+			initY-=1;
+			//check pen
+			if(penPosition == true){
+				arr[initX][initY] = 1;
+			}
+			else{
+				arr[initX][initY] = 0;
+			}	
+		}
+	    
+	} 
+
+///
+
+ 
+/////END CLASS////    
+}
