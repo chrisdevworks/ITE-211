@@ -24,8 +24,8 @@ public class TurtleGraphicsClass {
     boolean checkBump = false;
     
     // TURTLE POSITION
-    int initialPos = 0; //
-    int currentPos = 0;	//
+    int turtleX = 0; //
+    int turtleY = 0;	//
     
     // TABLE 	
     int[][] arr = {
@@ -63,6 +63,11 @@ public class TurtleGraphicsClass {
 		for(int i=0; i<arr.length; i++){
 			for(int j=0; j<arr[i].length; j++){
 				System.out.printf("%d",arr[i][j]);
+				//Turtle last position
+				
+				if(i == turtleX && j == turtleY ) {
+					System.out.print("*");
+				}
 			}
 		}
 	}
@@ -83,9 +88,9 @@ public class TurtleGraphicsClass {
 			if(penPosition == true){
 				arr[initX][initY] = 1;
 			}
-			else{
-				arr[initX][initY] = 0;
-			}
+			//TurtlePosition
+			turtleX = initX;
+			turtleY = initY;
 		}
 	 //////   
 	}
@@ -102,9 +107,9 @@ public class TurtleGraphicsClass {
 			if(penPosition == true){
 				arr[initX][initY] = 1;
 			}
-			else{
-				arr[initX][initY] = 0;
-			}	
+			//TurtlePosition
+			turtleX = initX;
+			turtleY = initY;	
 		}
 	    
 	} 
@@ -121,9 +126,9 @@ public class TurtleGraphicsClass {
 			if(penPosition == true){
 				arr[initX][initY] = 1;
 			}
-			else{
-				arr[initX][initY] = 0;
-			}	
+			//TurtlePosition
+			turtleX = initX;
+			turtleY = initY;	
 		}
 	    
 	} 
@@ -140,9 +145,9 @@ public class TurtleGraphicsClass {
 			if(penPosition == true){
 				arr[initX][initY] = 1;
 			}
-			else{
-				arr[initX][initY] = 0;
-			}	
+			//TurtlePosition
+			turtleX = initX;
+			turtleY = initY;	
 		}
 	    
 	} 
