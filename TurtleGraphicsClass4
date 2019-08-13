@@ -61,9 +61,9 @@ public class TurtleGraphicsClass {
 ////////////////// MOVE DIRECTION ///////////////////
 
 /// TURN RIGHT
-	public void turnLeft(penPosition){
+	public void moveLeft(penPosition){
 		//check bump
-		if(InitX == 1){
+		if(InitX == 2){
 			System.out.println("Error");
 		}
 		else{
@@ -80,12 +80,13 @@ public class TurtleGraphicsClass {
 	}
 	
 /// TURN LEFT	
-	public void turnLeft(penPosition){
+	public void moveLeft(penPosition){
 		//check bump
-		if(){
-			
+		if(InitX == 0){
+			System.out.println("Error");
 		}
 		else{
+			InitX-=1;
 			//check pen
 			if(penPosition == true){
 				arr[InitX][InitY] = 1;
@@ -97,46 +98,40 @@ public class TurtleGraphicsClass {
 	    
 	} 
 
-/// TURN FORWARD
-	public void turnLeft(penPosition){
+/// TURN UP
+	public void moveUp(penPosition){
 		//check bump
-		if(){
-			//check pen
-			if(penPosition == true){
-				
-			}
-			
-			else if(penPosition == false){
-				
-			}
-			else{
-				
-			}
+		if(InitY == 0){
+			System.out.println("Error");
 		}
 		else{
-			
+			InitY+=1;
+			//check pen
+			if(penPosition == true){
+				arr[InitX][InitY] = 1;
+			}
+			else{
+				arr[InitX][InitY] = 0;
+			}	
 		}
 	    
 	} 
 
-/// TURN BACKWARD
-	public void turnLeft(penPosition){
+/// TURN DOWN
+	public void moveDown(penPosition){
 		//check bump
-		if(){
-			//check pen
-			if(penPosition == true){
-				
-			}
-			
-			else if(penPosition == false){
-				
-			}
-			else{
-				
-			}
+		if(InitY == 0){
+			System.out.println("Error");
 		}
 		else{
-			
+			InitY-=1;
+			//check pen
+			if(penPosition == true){
+				arr[InitX][InitY] = 1;
+			}
+			else{
+				arr[InitX][InitY] = 0;
+			}	
 		}
 	    
 	} 
