@@ -1,0 +1,147 @@
+import java.util.Scanner;
+
+public class TurtleGraphicsClass {
+
+	//CHOICES
+    private boolean penUp = true;
+   	private final static int LEFT = 3;
+    private final static int RIGHT = 4;
+    private final static int DOWN = 5;
+    private final static int UP = 6;
+    
+	private static int InitX = 1;  // Horizontal position initially set to 0
+	private static int InitY = 1;  // Vertical position initially set to 0
+	private static int NewPositionX = 0;  // User indicates the desired horizontal position
+	private static int NewPositionY = 0;  // User indicates desired vertical position
+	private static int Direction = 0;  // Initial direction
+	private static boolean PenDown = false;  // Pen is raised
+	private static int GetMenu;
+
+    private int direction = 0;
+    
+    boolean checkBump = false;
+    
+    // TURTLE POSITION
+    int initialPos = 0; //
+    int currentPos = 0;	//
+    
+    // TABLE 	
+    int[][] arr = {
+    	{0,0,0},
+    	{0,0,0},
+    	{0,0,0}
+    };
+    
+////// DISPLAY
+	public void display(){
+		for(int i=0; i<arr.length; i++){
+			for(int j=0; j<arr[i].length; j++){
+				System.out.printf("%d",arr[i][j]);
+			}
+		}
+	}
+
+
+    
+/////////////////// PEN POSITION ///////////////////
+//DOWN
+	public void penDown()
+	{
+	    penUp = false;
+	}
+	
+//UP
+	public void penUp()
+	{
+	    penUp = true;
+	}
+	
+
+
+////////////////// MOVE DIRECTION ///////////////////
+
+/// TURN RIGHT
+	public void turnLeft(penPosition){
+		//check bump
+		if(InitX = 0 && InitX == 4 || InitY == 0 && InitY == 4){
+			System.out.println("Error");
+		}
+		else{
+			//check pen
+			if(penPosition == true){
+				arr[InitX][InitY] = 1;
+			}
+			else{
+				arr[InitX][InitY] = 0;
+			}
+		}
+	 //////   
+	}
+	
+/// TURN LEFT	
+	public void turnLeft(penPosition){
+		//check bump
+		if(){
+			
+		}
+		else{
+			//check pen
+			if(penPosition == true){
+				arr[InitX][InitY] = 1;
+			}
+			else{
+				arr[InitX][InitY] = 0;
+			}	
+		}
+	    
+	} 
+
+/// TURN FORWARD
+	public void turnLeft(penPosition){
+		//check bump
+		if(){
+			//check pen
+			if(penPosition == true){
+				
+			}
+			
+			else if(penPosition == false){
+				
+			}
+			else{
+				
+			}
+		}
+		else{
+			
+		}
+	    
+	} 
+
+/// TURN BACKWARD
+	public void turnLeft(penPosition){
+		//check bump
+		if(){
+			//check pen
+			if(penPosition == true){
+				
+			}
+			
+			else if(penPosition == false){
+				
+			}
+			else{
+				
+			}
+		}
+		else{
+			
+		}
+	    
+	} 
+
+///
+
+ 
+/////END CLASS////    
+}
