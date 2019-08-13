@@ -1,3 +1,6 @@
+///LAST ACTION: ASSIGNED TURTLE-X-Y TO DISPLAY
+///NEXT ACTION: CHECK OUTPUT
+
 import java.util.Scanner;
 
 public class TurtleGraphicsClass {
