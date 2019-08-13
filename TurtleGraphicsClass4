@@ -9,8 +9,8 @@ public class TurtleGraphicsClass {
     private final static int DOWN = 5;
     private final static int UP = 6;
     
-	private static int InitX = 1;  // Horizontal position initially set to 0
-	private static int InitY = 1;  // Vertical position initially set to 0
+	private static int InitX = 0;  // Horizontal position initially set to 0
+	private static int InitY = 0;  // Vertical position initially set to 0
 	private static int NewPositionX = 0;  // User indicates the desired horizontal position
 	private static int NewPositionY = 0;  // User indicates desired vertical position
 	private static int Direction = 0;  // Initial direction
@@ -63,10 +63,11 @@ public class TurtleGraphicsClass {
 /// TURN RIGHT
 	public void turnLeft(penPosition){
 		//check bump
-		if(InitX = 0 || InitX == 4 && InitY == 0 || InitY == 4){
+		if(InitX == 1){
 			System.out.println("Error");
 		}
 		else{
+			InitX +=1;
 			//check pen
 			if(penPosition == true){
 				arr[InitX][InitY] = 1;
