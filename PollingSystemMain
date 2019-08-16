@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class PollingSystemMain {
+    public static void main(String[] args) {
+    	Scanner input = new Scanner(System.in);
+
+    	int people = input.nextInt();
+    	
+    	int[] rating = new int[10];
+    	
+    	String[] issues = {
+    		"Climate Change",
+    		"Pollution",
+    		"Poverty",
+    		"Lack of Education",
+    		"Unemployment"
+    	};
+    	
+    //	int[] responses = {1,2,3,4,5,6,7,8,9,10};
+    	
+    	for(int i=0; i<issues.length; i++){
+    		System.out.printf("%s\n",issues[i]);
+    	}
+    	
+    	for(int i=0; i<5; i++){
+    		++rating[issues[i]];
+    	}
+    	
+    	for(int k=0; k<rating.length; k++){
+    		System.out.prinf("%d%10d",j,rating[j]);
+    	}
+    	
+    //	System.out.printf("%s%10s", rating, frequency);
+    	
+    	
+    }// END MAIN
+}// END CLASS
