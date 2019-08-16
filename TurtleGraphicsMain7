@@ -9,14 +9,11 @@ public class TurtleGraphicsMain{
 		boolean penPosition = false; //Default position Up
 		boolean userExit = false; //To exit System
 		
-
-		
 		do{
     		int choice = TurtleGraphics.displayMainMenu(); // Access Main Menu
-    		
-			System.out.println("\nSelect a pen.");
-
+			
 			switch(choice){
+				// PEN UP
 				case 1:
 					penPosition = false;
 					System.out.println("Pen is Up!\n");  
@@ -28,15 +25,7 @@ public class TurtleGraphicsMain{
 					penPosition = true;
 					System.out.println("Pen is Down!\n");
 					break;
-			
-				default:
-				System.out.println("\nYou did not enter a valid selection. Try Again.");
-				break;
-			}
-			
-			System.out.println("\nSelect a move.");
-			
-			switch(choice){
+					
 				// WALK RIGHT
 				case 3:
 					TurtleGraphics.moveRight(penPosition);
