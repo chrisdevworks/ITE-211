@@ -30,7 +30,7 @@ public class TurtleGraphicsMain{
     	}while( choice1 < 1 || choice1 > 2 );
     	
     	
-    	// MAIN MENU
+    	// MAIN SELECTION
 		do{
     		choice2 = TurtleGraphics.displayMainMenu(); // Access Main Menu
 			
