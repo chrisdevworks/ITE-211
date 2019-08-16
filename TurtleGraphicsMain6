@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+public class TurtleGraphicsMain{
+	public static void main (String[] args) {
+		TurtleGraphicsClass TurtleGraphics = new TurtleGraphicsClass();
+		Scanner input = new Scanner(System.in);
+		
+		boolean penPosition = false;
+		boolean userExit = false;
+		
+		System.out.println("Please Select From One Of The Following Commands:");  // Commands To Choose From
+		System.out.println("1: Pen Up");
+		System.out.println("2: Pen Down");
+		System.out.println("3: Move Right");
+		System.out.println("4: Move Left");
+		System.out.println("5: Move Up");
+		System.out.println("6: Move Down");
+		System.out.println("7: Display");
+		System.out.println("8: Exit");
+		
+		do{
+			//int choice = TurtleGraphics.displayMainMenu(); // return 1, 2, 3, 4
+			
+    		int choice = input.nextInt();
+			
+			switch(choice){
+				// PEN UP
+				case 1:
+					penPosition = false;
+					System.out.println("\nPen is Up!\n");
+					
+					break;
+				
+				// PEN DOWN
+				case 2:
+					penPosition = true;
+					System.out.println("\nPen is Down!\n");
+					break;
+					
+				// WALK RIGHT
+				case 3:
+					TurtleGraphics.moveRight(penPosition);
+					break;
+					
+				// WALK LEFT
+				case 4:
+					TurtleGraphics.moveLeft(penPosition);
+					break;
+					
+				// WALK UP
+				case 5:
+					TurtleGraphics.moveUp(penPosition);
+					break;
+					
+				// WALK DOWN
+				case 6:
+					TurtleGraphics.moveDown(penPosition);
+					break;
+						
+				// DISPLAY ARRAY
+				case 7:
+					TurtleGraphics.display();
+					userExit = true;
+					break;
+					 
+				// SYSTEM EXIT	
+				case 8:
+					System.out.println("\nExiting the system...");
+					userExit = true;
+					System.out.println("\nThank you! Goodbye!");
+					break;
+				
+				// INVALID INPUT
+				default:
+					System.out.println("\nYou did not enter a valid selection. Try Again.");
+					break;	
+				
+			
+			}// END SWITCH
+		}while(!userExit);// END WHILE
+			
+    
+    
+    
+    
+    
+    ///END MAIN
+	}
+///END CLASS	
+}
