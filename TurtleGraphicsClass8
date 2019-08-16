@@ -1,0 +1,174 @@
+import java.util.Scanner;
+
+public class TurtleGraphicsClass {
+	
+	private Scanner input = new Scanner(System.in);
+    
+	private static int initX = 0;  // Horizontal position initially set to 0
+	private static int initY = 0;  // Vertical position initially set to 0
+
+    
+    // TURTLE POSITION
+    int turtleX = 0; //
+    int turtleY = 0;	//
+    
+    // TABLE 	
+    int[][] arr = {
+    	{0,0,0},
+    	{0,0,0},
+    	{0,0,0}
+    };
+    
+////////////////// MAIN MENU /////////////////////////
+    public int displayMainMenu() {
+    	int choice;
+    	System.out.println("Please Select From One Of The Following Commands:");  // Commands To Choose From
+		System.out.print(">>  1:Pen Up  |  ");
+		System.out.print("2:Pen Down  |  ");
+		System.out.print("3:Move Right  |  ");
+		System.out.print("4:Move Left  |  ");
+		System.out.print("5:Move Up  |  ");
+		System.out.print("6:Move Down  |  ");
+		System.out.print("7:Display  |  ");
+		System.out.print("8:Exit\n");
+		System.out.print("Input:>>  ");
+		
+		// Loop until user choice is 1-8
+		do{
+    		choice = input.nextInt();
+    		if( choice < 1 || choice > 8){
+    			System.out.println("\nYou did not enter a valid selection. Try again!\n");
+    		}
+    	}while( choice < 1 || choice > 8 );
+    	
+		System.out.println("");
+		
+    	return choice; // return int
+    }
+    
+////////////////// DISPLAY TABLE //////////////////////
+	public void display(){
+		for(int x=0; x<arr.length; x++){
+			for(int y=0; y<arr[x].length; y++){
+				//Table
+				System.out.printf("%d",arr[x][y]);
+				
+				//Turtle current position
+				if(x == turtleX && y == turtleY ) {
+					System.out.print("*");
+				}
+				System.out.printf("\t");
+			}
+			System.out.println("");
+		}
+		System.out.println("");
+	}
+
+////////////////// MOVE DIRECTION ///////////////////
+
+
+/// MOVE RIGHT
+	public void moveRight(boolean penPosition){
+		//check right wall
+		if(initY == 2){
+			System.out.println("You hit a wall!\n");
+		}
+		else{
+			initY +=1;
+			//check pen
+			if(penPosition == true){
+				arr[initX][initY] = 1;
+				System.out.println("Pen is Down!");
+			}
+			else{
+				System.out.println("Pen is Up!");
+			}
+			
+			//TurtlePosition
+			turtleX = initX;
+			turtleY = initY;
+			
+			System.out.println("Turtle Moved Right!\n");
+
+		}
+	 //////   
+	}
+	
+/// MOVE LEFT	
+	public void moveLeft(boolean penPosition){
+		//check left wall
+		if(initY == 0){
+			System.out.println("You hit a wall!\n");
+		}
+		else{
+			initY-=1;
+			//check pen
+			if(penPosition == true){
+				arr[initX][initY] = 1;
+				System.out.println("Pen is Down!");
+			}
+			else{
+				System.out.println("Pen is Up!");
+			}
+			//TurtlePosition
+			turtleX = initX;
+			turtleY = initY;
+			System.out.println("Turtle Moved Left!\n");
+		}
+	    
+	} 
+
+/// MOVE UP
+	public void moveUp(boolean penPosition){
+		//check upper wall
+		if(initX == 0){
+			System.out.println("You hit a wall!\n");
+		}
+		else{
+			initX-=1;
+			//check pen
+			if(penPosition == true){
+				arr[initX][initY] = 1;
+				System.out.println("Pen is Down!");
+			}
+			else{
+				System.out.println("Pen is Up!");
+			}
+			//TurtlePosition
+			turtleX = initX;
+			turtleY = initY;
+			System.out.println("Turtle Moved Up!\n");
+
+		}
+	    
+	} 
+
+/// MOVE DOWN
+	public void moveDown(boolean penPosition){
+		//check bottom wall
+		if(initX == 2){
+			System.out.println("You hit a wall!\n");
+		}
+		else{
+			initX+=1;
+			//check pen
+			if(penPosition == true){
+				arr[initX][initY] = 1;
+				System.out.println("Pen is Down!");
+			}
+			else{
+				System.out.println("Pen is Up!");
+			}
+			//TurtlePosition
+			turtleX = initX;
+			turtleY = initY;
+			System.out.println("Turtle Moved Down!\n");
+		}
+	    
+	} 
+
+///
+
+ 
+/////END CLASS////    
+}
