@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class PollingSystemMain {
+    public static void main(String[] args) {
+    	Scanner input = new Scanner(System.in);
+		System.out.print("Input number of participant:\n>>Input:  ");
+    	int pox = input.nextInt();
+    	
+    	int[] ratingCount = new int[10];
+    	
+    	int[][] userRating = new int[pox][5];
+    	
+    	String[] issues = {
+    		"Climate Change",  
+    		"Pollution",
+    		"Poverty",
+    		"Lack of Education",
+    		"Unemployment"
+    	};
+    
+    //	int[] responses = {1,2,3,4,5,6,7,8,9,10};
+    /*							1	2	3	4	5	6	7	8	9	10
+     *		Climate Change		
+     *		Pollution
+     *		Poverty
+     *		Lack of Education
+     *		Unemployment
+     *		
+     **/
+     	
+     	
+    //INPUT	
+	    System.out.println("\n\nRate each social-consciousness issues from 1(least important) to 10(most important):");	
+     	do{
+
+     		for(int i=0; i<pox; i++){
+     			System.out.println("\n##################");
+     			System.out.printf("# Participant #%d #\n", i+1);
+     			System.out.println("##################");
+		    	for(int j=0; j<5;j++){
+		    		System.out.printf("\n%d:) %s\n",j+1,issues[j]);
+		    		System.out.print(">>Input Rate:  ");
+		    		userRating[i][j] = input.nextInt();
+		    	}
+	    	}
+	    	pox--;
+
+     	}while(pox>1);
+     	
+    
+    
+    
+    //DISPLAY
+    	System.out.println("\t\t\t\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10");
+    	
+    	for(int j=0; j<issues.length; j++){
+    		System.out.printf("%s\n",issues[j]);
+    	}
+    	
+    	//for(int i=0; i<5; i++){	}
+    	/*
+    	for(int k=0; k<rating.length; k++){
+    		System.out.printf("%d%10d",k,rating[k]);
+    	}
+    	*/
+    //	System.out.printf("%s%10s", rating, frequency);
+    	
+    	
+    }// END MAIN
+}// END CLASS
