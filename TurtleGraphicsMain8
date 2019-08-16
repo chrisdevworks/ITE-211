@@ -12,7 +12,7 @@ public class TurtleGraphicsMain{
 		System.out.println("###### Welcome to Turtle Graphics! ######\n");  
 		System.out.println("First select your Pen Position.");
 		System.out.println(">>  1:Pen Up\n>>  2:Pen Down");
-		System.out.print("Input:>>  ");
+		System.out.print(">>  Input:  ");
 		do{
     		choice1 = input.nextInt();
     		
@@ -25,7 +25,7 @@ public class TurtleGraphicsMain{
 				System.out.println("\nPen is Down!\n");  
     		}
     		else{
-    			System.out.println("\nYou did not enter a valid selection. Try again!\n");
+    			System.out.print("\nYou did not enter a valid selection. Try again!\n>>  Input:  ");
     		}
     	}while( choice1 < 1 || choice1 > 2 );
     	
