@@ -1,0 +1,116 @@
+import java.util.Scanner;
+
+public class PollingSystemMain {
+    public static void main(String[] args) {
+    	Scanner input = new Scanner(System.in);
+		System.out.print("Input number of participant:\n>>Input:  ");
+    	//int pox = 5;
+		int pox = input.nextInt();
+		
+    	int[]ratingNum = new int[10];
+    	
+    	double[] average = new double[5];
+    	
+    	int[] total = new int[5];
+    	
+    	int userRating = 0;
+    	
+    	String[] issues = {
+    		"Poverty",
+    		"Pollution",
+    		"Unemployment",
+    		"Climate Change",  
+    		"Lack of Education",
+    	};
+    
+    //	int[] responses = {1,2,3,4,5,6,7,8,9,10};
+    /*							1	2	3	4	5	6	7	8	9	10		average
+     *		Climate Change		
+     *		Pollution
+     *		Poverty
+     *		Lack of Education
+     *		Unemployment
+     *
+     *		<blank> issue received the highest point total with a total of #. 
+     *		<blank> issue received the lowest point total with a total of #. 
+     *		
+     **/
+     	
+     	
+    //INPUT	
+	    System.out.println("\n\nRate each social-consciousness issues\nfrom 1(least important) to 10(most important):");	
+     	do{
+
+     		for(int i=0; i<pox; i++){
+     			System.out.println("\n##################");
+     			System.out.printf("# Participant #%d #\n", i+1);
+     			System.out.println("##################");
+     			
+		    	int count = 1;
+		    	
+		    	for(int j=0; j<5;j++){
+		    		
+		    		System.out.printf("\n%d:) %s\n",count,issues[j]);
+		    		System.out.print(">>Input Rate:  ");
+		    		userRating = input.nextInt();
+		    		
+		    		++ratingNum[j];
+		    		total[j]+=ratingNum[j];
+		    		
+		    		++count;
+
+		    	}
+	    	}
+	    	pox--;
+
+     	}while(pox>1);
+     	
+    
+    
+    
+    //DISPLAY
+    	System.out.println("issues\t\t\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\tTotal\tAverage");
+    	System.out.printf("________________________________________________________________________________________________\n");
+    
+    	for(int i=0; i<issues.length; i++){
+    		// Issues
+    		System.out.printf("%s",issues[i]);
+    		
+    		//TAB SPACING
+    		if(issues[i].length()< 8){
+    			System.out.printf("\t\t\t");
+    		}
+    		else if(issues[i].length() < 10 ){
+    			System.out.printf("\t\t");
+    		}
+    		else if(issues[i].length() < 15 ){
+    			System.out.printf("\t");
+    		}
+    		else{
+    			System.out.printf("");
+    		}
+    		
+    		average[i] = total[i] / 10;
+    		
+    		// Ratings
+    		for(int j=0; j<10; j++){
+    			System.out.printf("\t%d",ratingNum[j]);
+    		}
+    		
+    		System.out.printf("\t%f", average[i]);
+    		System.out.printf("\t%d", total[i]);
+    		
+    		System.out.println("");
+    	}
+    	
+    	//for(int i=0; i<5; i++){	}
+    	/*
+    	for(int k=0; k<rating.length; k++){
+    		System.out.printf("%d%10d",k,rating[k]);
+    	}
+    	*/
+    //	System.out.printf("%s%10s", rating, frequency);
+    	
+    	
+    }// END MAIN
+}// END CLASS
