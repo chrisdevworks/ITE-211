@@ -24,7 +24,7 @@ public class PollingSystemMain {
     	};
     
     //	int[] responses = {1,2,3,4,5,6,7,8,9,10};
-    /*							1	2	3	4	5	6	7	8	9	10		average
+    /*							[1]	[2]	[3]	[4]	[5]	[6]	[7]	[8]	[9]	[10]		average
      *		Climate Change		
      *		Pollution
      *		Poverty
@@ -69,8 +69,8 @@ public class PollingSystemMain {
     
     
     //DISPLAY
-    	System.out.println("issues\t\t\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\tTotal\tAverage");
-    	System.out.printf("________________________________________________________________________________________________\n");
+    	System.out.println("Issues\t\t\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\tAverage\t  Total");
+    	System.out.println("________________________________________________________________________________________________");
     
     	for(int i=0; i<issues.length; i++){
     		// Issues
@@ -102,15 +102,7 @@ public class PollingSystemMain {
     		
     		System.out.println("");
     	}
-    	
-    	//for(int i=0; i<5; i++){	}
-    	/*
-    	for(int k=0; k<rating.length; k++){
-    		System.out.printf("%d%10d",k,rating[k]);
-    	}
-    	*/
-    //	System.out.printf("%s%10s", rating, frequency);
-    	
+   
     	
     }// END MAIN
 }// END CLASS
