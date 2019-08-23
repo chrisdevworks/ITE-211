@@ -58,16 +58,16 @@ public class Salaries{
 		}
 		
 		//DISPLAY
-		System.out.println("Salary Range\t\tSalary Count");
-		System.out.printf("200-299\t\t\t\t%d\n",count[0]);
-		System.out.printf("300-399\t\t\t\t%d\n",count[1]);
-		System.out.printf("400-499\t\t\t\t%d\n",count[2]);
-		System.out.printf("500-599\t\t\t\t%d\n",count[3]);
-		System.out.printf("600-699\t\t\t\t%d\n",count[4]);
-		System.out.printf("700-799\t\t\t\t%d\n",count[5]);
-		System.out.printf("800-899\t\t\t\t%d\n",count[6]);
-		System.out.printf("900-999\t\t\t\t%d\n",count[7]);
-		System.out.printf("100-above\t\t\t%d\n",count[8]);
+		System.out.println("\n\nSalary Range\t\tSalary Count");
+		System.out.printf("$200-$299\t\t\t%d\n",count[0]);
+		System.out.printf("$300-$399\t\t\t%d\n",count[1]);
+		System.out.printf("$400-$499\t\t\t%d\n",count[2]);
+		System.out.printf("$500-$599\t\t\t%d\n",count[3]);
+		System.out.printf("$600-$699\t\t\t%d\n",count[4]);
+		System.out.printf("$700-$799\t\t\t%d\n",count[5]);
+		System.out.printf("$800-$899\t\t\t%d\n",count[6]);
+		System.out.printf("$900-$999\t\t\t%d\n",count[7]);
+		System.out.printf("$100-above\t\t\t%d\n",count[8]);
 		
 	}
 }
