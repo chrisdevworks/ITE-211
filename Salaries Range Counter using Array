@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class Salaries{
+	public static void main(String[] args){
+		
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Input number of Salesperson");
+
+		int numPeople = input.nextInt();
+		
+		double[] salesPerson = new double[numPeople];
+		
+		int[] count = new int[9];
+		
+		double[] total = new double[numPeople];
+		
+		//GROSS
+		for(int i=0; i<numPeople; i++){
+			System.out.printf("Sales Person #%d:\t", i+1);
+			salesPerson[i] = input.nextDouble();
+			salesPerson[i]*= 0.09;
+		}
+		
+		//TOTAL + COUNT
+		for(int j=0; j<numPeople; j++){
+			total[j]+=200+salesPerson[j];
+			if(total[j]>=200 && total[j]<=299){
+				count[0]+=1;
+			}
+			else if(total[j]>=300 && total[j]<=399){
+				count[1]+=1;
+			}
+			else if(total[j]>=400 && total[j]<=499){
+				count[2]+=1;
+			}
+			else if(total[j]>=500 && total[j]<=599){
+				count[3]+=1;
+			}
+			else if(total[j]>=600 && total[j]<=699){
+				count[4]+=1;
+			}
+			else if(total[j]>=700 && total[j]<=799){
+				count[5]+=1;
+			}
+			else if(total[j]>=800 && total[j]<=899){
+				count[6]+=1;
+			}
+			else if(total[j]>=900 && total[j]<=999){
+				count[7]+=1;
+			}
+			else if(total[j]>=1000){
+				count[8]+=1;
+			}
+			else{
+				System.out.println("Wrong Value");
+			}
+		}
+		
+		//DISPLAY
+		System.out.println("Salary Range\t\tSalary Count");
+		System.out.printf("200-299\t\t\t\t%d\n",count[0]);
+		System.out.printf("300-399\t\t\t\t%d\n",count[1]);
+		System.out.printf("400-499\t\t\t\t%d\n",count[2]);
+		System.out.printf("500-599\t\t\t\t%d\n",count[3]);
+		System.out.printf("600-699\t\t\t\t%d\n",count[4]);
+		System.out.printf("700-799\t\t\t\t%d\n",count[5]);
+		System.out.printf("800-899\t\t\t\t%d\n",count[6]);
+		System.out.printf("900-999\t\t\t\t%d\n",count[7]);
+		System.out.printf("100-above\t\t\t%d\n",count[8]);
+		
+	}
+}
