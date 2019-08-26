@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+
+public class PollingSystemMain {
+    public static void main(String[] args) {
+    	
+    	PollingSystemClass PollingSystem = new PollingSystemClass();
+    		
+    	Scanner input = new Scanner(System.in);
+    	
+    	int userRating;
+		final int MAX = 11;
+    	int[][] ratingNum = new int[5][MAX];
+    	int[][] ratingTotal = new int[5][MAX];
+    	double[] average = new double[5];
+    	double[] rowTotal = new double[5];
+    	String[] issues = {
+    		"Poverty",
+    		"Pollution",
+    		"Unemployment",
+    		"Climate Change",  
+    		"Lack of Education",
+    	};
+
+    //INPUT	
+		System.out.print("Input number of participant:\n>>Input:  ");
+		int voters = input.nextInt();
+		int count = voters;	
+	    System.out.println("\n\nRate each social-consciousness issues\nfrom 1(least important) to 10(most important):");	
+
+     	for(int i=0; i<voters; i++){
+     		System.out.println("\n##################");
+     		System.out.printf("# Participant #%d #\n", i+1);
+     		System.out.println("##################");
+     		
+		   	int num = 1; 
+		   	
+		   	for(int j=0; j<5;j++){
+		   		
+		   		System.out.printf("\n%d:) %s\n",num,issues[j]);
+		   		System.out.print(">>Input Rate:  ");
+		   		
+		   		//FREQUENCY
+		   		do{
+		   			userRating = input.nextInt();
+		   			if(userRating < 1 || userRating > 11){
+		   				System.out.println("\nYou did not enter a valid selection. Try again!");
+		   				System.out.print(">>Input Rate:  ");
+		   			}
+		   		}while(userRating < 1 || userRating > 11);
+		   		
+		   		++ratingNum[j][userRating];
+		   		++num;
+		   	}
+	   	}
+
+    
+    	System.out.println("Issues\t\t\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\tTotal\tAverage");
+    	System.out.println("________________________________________________________________________________________________");
+    	
+    	/////////////////ROWS///////////////////
+    
+    	//ISSUES
+    	for(int i=0; i<issues.length; i++){
+    		System.out.printf("%s",issues[i]);
+    		//TAB SPACING
+    		PollingSystem.tabSpacing(issues[i].length());
+    		
+    		/////////////////COLUMNS///////////////
+    		//RATES
+    		for(int j=1; j<MAX; j++){
+    			ratingTotal[i][j]=ratingNum[i][j]*j;
+    			rowTotal[i]+=ratingTotal[i][j];
+    			System.out.printf("\t%d",ratingNum[i][j]);
+    		}
+    		
+    		//TOTAL
+    		System.out.printf("\t%.2f", rowTotal[i]);
+    		
+			//AVERAGE
+    		average[i] = PollingSystem.getAverage(rowTotal[i], voters);
+    		System.out.println("");
+    	}
+   
+    }// END MAIN
+}// END CLASS
