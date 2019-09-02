@@ -1,4 +1,9 @@
-https://beginnersbook.com/2013/03/constructors-in-java/
+//https://beginnersbook.com/2013/03/constructors-in-java/
+/*
+In this example we have a parameterized constructor with two parameters id and name. 
+While creating the objects obj1 and obj2 I have passed two arguments so that this constructor gets 
+invoked after creation of obj1 and obj2.
+*/
 
 public class Employee {
 
