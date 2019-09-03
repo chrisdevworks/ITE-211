@@ -1,0 +1,33 @@
+
+import java.util.Scanner;
+
+
+public class StringMain {
+
+    public static void main(String[] args) {
+    	StringClass myString = new StringClass();
+    	Scanner input = new Scanner(System.in);
+    	    	
+    	String string1 = new String();
+    	String string2 = new String();
+    	
+    	System.out.println("Enter 2 Strings:");
+    	System.out.print("String 1>> ");
+    	string1 = input.next();
+    	System.out.println("");
+    	System.out.print("String 2>> ");
+    	string2 = input.next();
+    	
+    	
+    	System.out.println("\n#################################################################\n");
+    	
+    	System.out.println("Define Paramaters:\n");
+    	System.out.print("Enter the starting Index for the strings >> ");
+    	int start = input.nextInt();
+    	System.out.println("");
+    	System.out.print("Enter the length >> ");
+    	int size = input.nextInt();
+    	
+    	myString.stringComparison(string1,string2,start,size);
+    }
+}
