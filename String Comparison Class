@@ -1,0 +1,12 @@
+public class StringClass {
+
+    public void stringComparison(String str1, String str2, int nStart, int nSize) {
+    	if(str1.regionMatches(true, nStart, str2, nStart, nSize)){
+    		System.out.println("\nThey are the same!");
+    	}
+    	else{
+    		System.out.println("\nThey are not the same!");
+    	}
+    }
+    
+}
