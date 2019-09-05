@@ -1,0 +1,16 @@
+public class StringCorrectionClass {
+
+    public String SpaceCorrection(String userStr){
+    	String strTrim = userStr.trim(); // remove unnecessary endpoint spaces
+    	String properSpacing = strTrim.replaceAll("\\s+", " ");  // remove unnecessary middle spaces
+    	return properSpacing;
+    }
+    
+    public String properCasing(String userStr){
+    	String setLowerCase = userStr.toLowerCase(); //lower case everything
+    	String setUppercase = setLowerCase.substring(0, 1).toUpperCase(); //uppercase first letter
+    	String strConcatinate = setUppercase + setLowerCase.substring(1); //uppercase letter + string starting at index 1
+    	return strConcatinate;
+    }
+
+}//END CLASS
