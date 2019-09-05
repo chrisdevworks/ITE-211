@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class StringCorrectionMain {
+
+    public static void main(String[] args) {
+    	Scanner input = new Scanner(System.in);
+    	
+    	StringCorrectionClass StringCorrection = new StringCorrectionClass();
+    	
+    	String userStr,newStr1,newStr2;
+    	
+    	//JUST COPY THIS STRING//
+    	//   i am     goIng to    Go   to   The  moVies.  //
+    	
+    	//LOOP
+    	while(true){
+    		System.out.print("Input String>> ");
+    		userStr = input.nextLine();
+    		newStr1 = StringCorrection.SpaceCorrection(userStr); //fixed spacings
+    		newStr2 = StringCorrection.properCasing(newStr1); //fixed casings
+    		System.out.printf("\n%s\n\n",newStr2);
+    		System.out.println("#########################################\n");
+    	}
+      
+    }//END MAIN
+}//END CLASS
