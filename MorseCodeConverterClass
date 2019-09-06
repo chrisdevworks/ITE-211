@@ -3,6 +3,8 @@ public class MorseCodeConverterClass {
 
     public MorseCodeConverterClass() {
     	//Letters
+    	String[] Letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    	}
     	String a = ".-";
     	String b = "-...";
     	String c = "-.-.";
@@ -45,10 +47,16 @@ public class MorseCodeConverterClass {
     
     
     public void toMorse(String userEng){
-    	
+    	String userEng2 = userEng.toLowerCase();
+    	System.out.println("\nENGLISH TO MORSE CODE...");
+    	System.out.println("");
+    	System.out.println("");
     }
     
     public void toEnglish(String userMor){
+    	System.out.println("\nMORSE CODE TO ENGLISH...");
+    	System.out.println("");
+    	System.out.println("");
     	
     }
     
