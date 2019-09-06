@@ -14,7 +14,7 @@ public class MorseCodeConverterMain {
     	
     	
     	int userSelect;
-    	String Str ;
+    	String userStr, userMorse;
     	boolean userExit = false; //To exit System
     	
   		
@@ -27,10 +27,15 @@ public class MorseCodeConverterMain {
   			userSelect = input.nextInt();
   			
 	  		switch(userSelect){
+	  			// ENGLISH TO MORSE CODE
 	  			case 1:
+	  				userStr	= input.nextLine();
 	  				
-	  				
+	  			
+	  			// MORSE CODE TO ENGLISH	
 	  			case 2:
+	  				userMorse = input.nextLine();
+	  				
 	  				
 	  			// SYSTEM EXIT	
 	  			case 3:
