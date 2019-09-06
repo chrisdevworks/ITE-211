@@ -10,14 +10,42 @@ public class MorseCodeConverterMain {
     public static void main(String[] args) {
     	Scanner input = new Scanner(System.in);
     	
-    	//MorseCodeConverterClass StringCorrection = new MorseCodeConverterClass();
-    	
-    	String userStr,newStr1,newStr2;
+    	MorseCodeConverterClass StringCorrection = new MorseCodeConverterClass();
     	
     	
+    	int userSelect;
+    	String Str ;
+    	boolean userExit = false; //To exit System
     	
-    	//JUST COPY THIS STRING//
-    	//   i am     goIng to    Go   to   The  moVies.  //
+  		
+  		
+  		do{
+  			System.out.println("Select Option to Convert...");
+  			System.out.println("Type 1 for English to Morse Code.");
+  			System.out.println("Type 2 for Morse Code to English. ");
+  			System.out.println("Type 3 to Exit. ");
+  			userSelect = input.nextInt();
+  			
+	  		switch(userSelect){
+	  			case 1:
+	  				
+	  				
+	  			case 2:
+	  				
+	  			// SYSTEM EXIT	
+	  			case 3:
+	  				System.out.println("\nExiting the system...");
+	  				userExit = true;
+	  				System.out.println("\nThank you! Goodbye!");
+	  				break;
+	  				
+  				default:
+  					System.out.println("\nYou did not enter a valid selection. Try Again.");
+  					break;
+  					
+  			}//END SWITCH
+  		}while(!userExit);//  END WHILE
+
       
     }//END MAIN
 }//END CLASS
