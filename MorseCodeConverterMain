@@ -31,11 +31,13 @@ public class MorseCodeConverterMain {
 	  			case 1:
 	  				userEng	= input.nextLine();
 	  				convert.toMorse(userEng);
+	  				break;
 	  			
 	  			// MORSE CODE TO ENGLISH	
 	  			case 2:
 	  				userMor = input.nextLine();
 	  				convert.toEnglish(userMor);
+	  				break;
 	  				
 	  			// SYSTEM EXIT	
 	  			case 3:
