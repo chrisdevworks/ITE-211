@@ -29,12 +29,16 @@ public class MorseCodeConverterMain {
 	  		switch(userSelect){
 	  			// ENGLISH TO MORSE CODE
 	  			case 1:
+    				System.out.println("Please Input your English String:");
+    				System.out.print(">> ");
 	  				userEng	= input.nextLine();
 	  				convert.toMorse(userEng);
 	  				break;
 	  			
 	  			// MORSE CODE TO ENGLISH	
 	  			case 2:
+	  				System.out.println("Please Input your Morse Code:");
+    				System.out.print(">> ");
 	  				userMor = input.nextLine();
 	  				convert.toEnglish(userMor);
 	  				break;
