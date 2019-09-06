@@ -10,11 +10,11 @@ public class MorseCodeConverterMain {
     public static void main(String[] args) {
     	Scanner input = new Scanner(System.in);
     	
-    	MorseCodeConverterClass StringCorrection = new MorseCodeConverterClass();
+    	MorseCodeConverterClass convert = new MorseCodeConverterClass();
     	
     	
     	int userSelect;
-    	String userStr, userMorse;
+    	String userEng, userMor;
     	boolean userExit = false; //To exit System
     	
   		
@@ -29,13 +29,13 @@ public class MorseCodeConverterMain {
 	  		switch(userSelect){
 	  			// ENGLISH TO MORSE CODE
 	  			case 1:
-	  				userStr	= input.nextLine();
-	  				
+	  				userEng	= input.nextLine();
+	  				convert.toMorse(userEng);
 	  			
 	  			// MORSE CODE TO ENGLISH	
 	  			case 2:
-	  				userMorse = input.nextLine();
-	  				
+	  				userMor = input.nextLine();
+	  				convert.toEnglish(userMor);
 	  				
 	  			// SYSTEM EXIT	
 	  			case 3:
