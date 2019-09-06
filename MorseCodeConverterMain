@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+//Write an application that reads an English-language phrase and encodes it into Morse Code.
+//Also write an application that reads a phrase in Morse Code and converts it into English-language.
+//Use one blank between each Morse-coded letter.
+//Three blanks between each Morse-coded word.
+
+public class MorseCodeConverterMain {
+
+    public static void main(String[] args) {
+    	Scanner input = new Scanner(System.in);
+    	
+    	//MorseCodeConverterClass StringCorrection = new MorseCodeConverterClass();
+    	
+    	String userStr,newStr1,newStr2;
+    	
+    	
+    	
+    	//JUST COPY THIS STRING//
+    	//   i am     goIng to    Go   to   The  moVies.  //
+      
+    }//END MAIN
+}//END CLASS
