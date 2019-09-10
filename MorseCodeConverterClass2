@@ -1,0 +1,144 @@
+
+import java.util.Scanner;
+
+public class MorseCodeConverterClass {
+	
+	Scanner input = new Scanner(System.in);
+		int size;
+		String userStr;
+    	String AlphaNum = "abcdefghijklmnopqrstuvwxyz0123456789";
+    	String[] Morse = {
+    	//Letters	
+    		".-", //a
+    		"-...", //b
+    		"-.-.", //c
+    		"-..", //d
+    	 	".", //e
+    		"..-.", //f
+    		"--.", //g
+    		"....", //h
+    		"..", //i
+    		".---", //j
+  			"-.-", //k
+    		".-..", //l
+    		"--", //m
+     		"-.", //n
+    		"---", //o
+    		".--.", //p
+    		"--.-", //q
+    		".-.", //r
+    		"...", //s
+    	 	"-", //t
+    		"..-", //u
+    		"...-", //v
+    		".--", //w
+    		"-..-", //x
+    		"-.--", //y
+    		"--..", //z
+    	
+    	//Numbers
+    		"-----", //0
+     		".----", //1
+    		"..---", //2
+     		"...--", //3
+    		"....-", //4
+    		".....", //5
+     		"-....", //6
+     		"--...", //7
+     		"---..", //8
+     		"----.", //9
+   		};
+
+    	
+    
+    public void displayMainMenu() {
+    	int choice;
+    	boolean userExit = false;
+		
+		// Loop until user choice is 1-8
+		do{
+			do{
+				System.out.println("Please Select Your Option");  // Commands To Choose From
+				System.out.println("1: Morse Code to English\n2: English to Morse Code\n3: Exit");
+				System.out.print(">> ");
+				
+	    		choice = input.nextInt();
+	    		
+	    		if( choice != 1 || choice != 2 || choice !=3 ){
+	    			System.out.println("\nYou did not enter a valid selection. Try again!\n");
+	    		}
+	    	}while( choice != 1 || choice != 2 || choice !=3);
+    	
+    		
+    		switch(choice){
+   				//MORSE TO ENGLISH
+    			case 1:
+    				System.out.println("\nMORSE CODE TO ENGLISH...");
+    				System.out.print(">> ");
+    				userStr = input.nextLine();
+    				size = userStr.length();
+    				toEnglish(userStr, size);
+					break;
+    			
+    			//ENGLISH TO MORSE	
+    			case 2:
+    				System.out.println("\nENGLISH TO MORSE CODE...");
+    				System.out.print(">> ");
+    				userStr = input.nextLine();
+    				size = userStr.length();
+    				toMorse(userStr, size);
+    				break;
+    			
+    			//SYSTEM EXIT	
+    			case 3:
+    				System.out.println("\nExiting the system...");
+					userExit = true;
+					System.out.println("\nThank you! Goodbye!");
+					break;
+				
+				//INVALID INPUT	
+    			default:
+    				System.out.println("\nYou did not enter a valid selection. Try Again.");
+    		
+    		}//END SWITCH
+    	}while(!userExit); //END WHILE
+    }
+    
+    public void toMorse(String userEng, int size){
+    	String newEng = userEng.toLowerCase();
+    	
+    	for(int i=0; i<size; i++){
+    		for(int j=0; j<AlphaNum.length(); j++){
+    			if(newEng.charAt(j) == AlphaNum.charAt(j)){
+    				System.out.printf("%s",Morse[j]); //Array search
+    			}
+    			
+    			if(newEng.charAt(j) == ' '){
+    				System.out.print("   "); //3 SPACES
+    			}
+    		}
+    	}
+    	System.out.println("");
+    }
+    
+    public void toEnglish(String userMor, int size){
+    	String newMor = userMor.toLowerCase();
+    	
+    	for(int i=0; i<size; i++){
+    		for(int j=0; j<Morse.length; j++){
+    			if(charArray2[j] == Morse[j]){
+    				System.out.printf("%s",Morse[j]); //Array search
+    			}
+    			
+    			if(userMor[i] == '   '){
+    				System.out.print(" "); //3 SPACES
+    			}
+    		}
+    	}
+    	System.out.println("");
+    }
+    
+    
+    
+    
+}
