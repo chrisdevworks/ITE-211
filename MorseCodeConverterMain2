@@ -1,0 +1,64 @@
+package MorseCode;
+
+//Write an application that reads an English-language phrase and encodes it into Morse Code.
+//Also write an application that reads a phrase in Morse Code and converts it into English-language.
+//Use one blank between each Morse-coded letter.
+//Three blanks between each Morse-coded word.
+import java.util.Scanner;
+
+public class MorseCodeConverterMain {
+
+  public static void main(String[] args) {
+	  
+	Scanner input = new Scanner(System.in);
+  	
+  	MorseCodeConverterClass convert = new MorseCodeConverterClass();
+
+  	int choice;
+	String TrimStr;
+	boolean userExit = false;
+	int size;
+	String userStr;
+	
+	do{
+		// Loop until user choice is 1 or 2
+		choice = convert.displayMainMenu();
+		
+		switch(choice){
+				//MORSE TO ENGLISH
+			case 1:
+				System.out.println("\nMORSE CODE TO ENGLISH...");
+				System.out.print(">> ");
+				userStr = input.nextLine();
+				TrimStr = userStr.trim();
+				size = TrimStr.length();
+				//System.out.printf("%d\n",size);
+				convert.toEnglish(userStr, size);
+				break;
+			
+			//ENGLISH TO MORSE	
+			case 2:
+				System.out.println("\nENGLISH TO MORSE CODE...");
+				System.out.print(">> ");
+				userStr = input.nextLine();
+				size = userStr.length();
+				convert.toMorse(userStr, size);
+				break;
+			
+			//SYSTEM EXIT	
+			case 3:
+				System.out.println("\nExiting the system...");
+				System.out.println("\nThank you! Goodbye!");
+				userExit = true;
+				break;
+			
+			//INVALID INPUT	
+			default:
+				System.out.println("\nYou did not enter a valid selection. Try Again.");
+		
+		}//END SWITCH
+	}while(!userExit); //END WHILE
+
+    
+  }//END MAIN
+}//END CLASS
