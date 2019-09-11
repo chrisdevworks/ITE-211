@@ -1,0 +1,158 @@
+package MorseCode;
+
+import java.util.Scanner;
+
+public class MorseCodeConverterClass {
+	
+		Scanner input = new Scanner(System.in);
+    	String AlphaNum = "abcdefghijklmnopqrstuvwxyz0123456789";
+    	String[] Morse = {
+    	//Letters	
+    		".-", //a
+    		"-...", //b
+    		"-.-.", //c
+    		"-..", //d
+    	 	".", //e
+    		"..-.", //f
+    		"--.", //g
+    		"....", //h
+    		"..", //i
+    		".---", //j
+  			"-.-", //k
+    		".-..", //l
+    		"--", //m
+     		"-.", //n
+    		"---", //o
+    		".--.", //p
+    		"--.-", //q
+    		".-.", //r
+    		"...", //s
+    	 	"-", //t
+    		"..-", //u
+    		"...-", //v
+    		".--", //w
+    		"-..-", //x
+    		"-.--", //y
+    		"--..", //z
+    	
+    	//Numbers
+    		"-----", //0
+     		".----", //1
+    		"..---", //2
+     		"...--", //3
+    		"....-", //4
+    		".....", //5
+     		"-....", //6
+     		"--...", //7
+     		"---..", //8
+     		"----.", //9
+   		};
+
+    	
+    // MAIN MENU
+    public int displayMainMenu() {	
+    	int choice;
+    	System.out.println("Please Select Your Option");  // Commands To Choose From
+		System.out.println("1: Morse Code to English\n2: English to Morse Code\n3: Exit");
+		System.out.print("Input:>>> ");
+		
+    	do{
+    		choice = input.nextInt();
+    		if( choice < 1 || choice >3 ){
+    			System.out.println("\nYou did not enter a valid selection. Try again!\n");
+    		}
+    	}while( choice < 1 || choice > 3 );	
+    	
+    	return choice;
+    }
+
+    
+  //MORSE TO ENGLISH
+    public void toEnglish(String userMor, int size){
+    	
+    	int indexOfSpace   = 0;
+    	int nextIndexOfSpace = 0;
+    	int lastIndexOfSpace  = userMor.lastIndexOf(" ");
+    	String letter;
+    	
+    	
+    	while(indexOfSpace != lastIndexOfSpace) {
+    		nextIndexOfSpace = userMor.indexOf(" ",indexOfSpace);  
+    		letter = userMor.substring(indexOfSpace ,nextIndexOfSpace);
+    	    
+    		
+    			for(int j=0; j<Morse.length; j++){
+        			if( letter == Morse[j]){
+        				System.out.printf("%s",AlphaNum.charAt(j)); //Array search
+        			}
+        		
+    			}
+    	    
+    	    
+    	    indexOfSpace = nextIndexOfSpace;
+    	}
+    	/*
+    	
+    	for(int i=0; i<size; i++){
+    		//WORD
+    		nextIndexOfSpace = userMor.indexOf(" ",indexOfSpace );
+    		
+			if(userMor.substring(i) == "   ") {
+	    		System.out.print(" ");
+	    		i+=3; //jump 3 characters
+			}
+			
+    		//LETTER
+    		if(userMor.charAt(i) == '.' || userMor.charAt(i) == '-') {
+    	
+    			for(int j=0; j<Morse.length; j++){
+        			if( userMor.substring(i, i+count) == Morse[j]){
+        				System.out.printf("%s",AlphaNum.charAt(j)); //Array search
+        				i+=Morse[j].length();
+        				count = 0;
+        			}
+        		}
+    		}
+    		
+    	}
+    	*/
+    	System.out.println("");
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // ENGLISH TO MORSE
+    public void toMorse(String userEng, int size){
+    	String newEng = userEng.toLowerCase();
+    	
+    	System.out.println("");
+    	
+    	for(int i=0; i<size; i++){
+    		for(int j=0; j<AlphaNum.length(); j++){
+    			if(newEng.charAt(i) == AlphaNum.charAt(j)){
+    				System.out.printf("%s ",Morse[j]); //Array search
+    			}
+    		}
+    		if(newEng.charAt(i) == ' '){
+				System.out.print("   "); //WORD SPACE
+			}
+    	}
+    	System.out.println("\n");
+    }
+    
+    
+
+    
+}
