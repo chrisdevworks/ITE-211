@@ -1,0 +1,28 @@
+/**
+ * @(#)PalindromeMain.java
+ *
+ *
+ * @author 
+ * @version 1.00 2019/9/12
+ */
+import java.util.Scanner;
+
+public class PalindromeMain {
+
+    public static void main(String[] args) {
+    	Scanner input = new Scanner(System.in);
+    	PalindromeClass check = new PalindromeClass();
+
+    	String word1 = "";
+        int size;
+
+    	while(true){
+       	 System.out.println("Enter the string you want to check:");
+       	 System.out.print(">>>");
+       	 word1 = input.nextLine();
+       	 size = word1.length();
+       	 
+       	 check.Palindrome(size,word1);
+    	}
+    }//END MAIN
+}//END CLASS
