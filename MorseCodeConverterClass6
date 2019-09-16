@@ -54,14 +54,15 @@ public class MorseCodeConverterClass {
     	int choice;
     	System.out.println("Please Select Your Option");  // Commands To Choose From
 		System.out.println("1: English to Morse Code\n2: Morse Code to English\n3: Exit");
-		System.out.print("Input:>>> ");
+		
 		
     	do{
+		System.out.print("Input:>>> ");
     		choice = input.nextInt();
-    		if( choice != 1 && choice != 2 && choice != 3 ){
+    		if(choice < 1 || choice > 3){
     			System.out.println("\nYou did not enter a valid selection. Try again!\n");
     		}
-    	}while( choice != 1 && choice != 2 && choice != 3 );	
+    	}while(choice < 1 || choice > 3);		
     	
     	return choice;
     }
