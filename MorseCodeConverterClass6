@@ -107,7 +107,7 @@ public class MorseCodeConverterClass {
 		//WORD
 		String [] wordNum = spcStr.split("\\|");
 		
-		//System.out.println("\n\n####################################################");
+		System.out.println("\n\n####################################################");
 		
 		int size1 = wordNum.length;
 		
