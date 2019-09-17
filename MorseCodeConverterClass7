@@ -1,0 +1,153 @@
+package MorseCode;
+
+import java.util.Scanner;
+
+public class MorseCodeConverterClass {
+	
+		Scanner input = new Scanner(System.in);
+    	String AlphaNum = "abcdefghijklmnopqrstuvwxyz0123456789";
+    	String[] Morse = {
+    	//Letters	
+    		".-", //a
+    		"-...", //b
+    		"-.-.", //c
+    		"-..", //d
+    	 	".", //e
+    		"..-.", //f
+    		"--.", //g
+    		"....", //h
+    		"..", //i
+    		".---", //j
+  			"-.-", //k
+    		".-..", //l
+    		"--", //m
+     		"-.", //n
+    		"---", //o
+    		".--.", //p
+    		"--.-", //q
+    		".-.", //r
+    		"...", //s
+    	 	"-", //t
+    		"..-", //u
+    		"...-", //v
+    		".--", //w
+    		"-..-", //x
+    		"-.--", //y
+    		"--..", //z
+    	
+    	//Numbers
+    		"-----", //0
+     		".----", //1
+    		"..---", //2
+     		"...--", //3
+    		"....-", //4
+    		".....", //5
+     		"-....", //6
+     		"--...", //7
+     		"---..", //8
+     		"----.", //9
+   		};
+
+    	
+/////////////////////////// MAIN MENU/////////////////////////
+    public int displayMainMenu() {	
+    	int choice;
+    	System.out.println("Please Select Your Option...");  // Commands To Choose From
+		System.out.println("1: English to Morse Code\n2: Morse Code to English\n3: Exit");
+    	do{
+    		System.out.print("Input:>>> ");
+    		choice = input.nextInt();
+    		if(  choice < 1 || choice > 3){
+    			System.out.println("\nYou did not enter a valid selection. Try again!\n");
+    		}
+    	}while(  choice < 1 || choice > 3);	
+    	
+    	return choice;
+    }
+    
+    
+//////////////////////////// ENGLISH TO MORSE ///////////////////////////////////////////
+    public void toMorse(String userEng, int size){
+
+    	String newEng = userEng.toLowerCase();
+    	String newMor = "";
+    	
+    	System.out.println("");
+    	
+    	for(int i=0; i<size; i++){
+    		for(int j=0; j<AlphaNum.length(); j++){
+    			if(newEng.charAt(i) == AlphaNum.charAt(j)){
+    				//System.out.printf("%s ",Morse[j]); //Array search
+    				newMor = newMor.concat(Morse[j]);
+    				newMor = newMor.concat(" ");
+    				//System.out.printf("%s ",newStr);
+    			}
+    		}
+    		if(newEng.charAt(i) == ' '){
+    			newMor = newMor.concat("  ");//WORD SPACE
+			}
+    	}
+    	System.out.println("\n###############################################################");
+    	System.out.printf("\n%s",newMor.trim());
+    	System.out.println("\n###############################################################");
+    
+    }//END METHOD
+    
+    
+///////////////////////////MORSE TO ENGLISH///////////////////////
+    public void toEnglish(String userMor){
+		
+		String TrimStr,spcStr;
+		TrimStr = userMor.trim();
+		spcStr = TrimStr.replaceAll("(   )", " |");
+		spcStr = spcStr.concat(" |");
+		
+		//WORD
+		String [] wordNum = spcStr.split("\\|");
+		
+		System.out.println("\n####################################################");
+		
+		//int size1 = wordNum.length;
+		
+		//String[] myarray2 = new String[size1];
+		
+		//LETTER
+		int count = 0;
+		for (int i=0; i<wordNum.length; i++) {
+			String myWord = wordNum[i];
+			String [] letterNum = myWord.split(" ");
+			
+			
+			//int size2 = myWord.length();
+			
+			//char[] array = new char[size2-1];
+		
+			for (int j=0; j<letterNum.length; j++){
+				String myletter = letterNum[j];
+				
+				for(int k=0; k<Morse.length; k++){
+					
+					if( myletter.equals(Morse[k]) ){
+						//array[j] = AlphaNum.charAt(k);
+						System.out.print(AlphaNum.charAt(k)); //Array search
+					}
+				}
+			}
+			
+			//String myarray = new String(array);
+			
+			//myarray2[i] = myarray+' ';
+			
+			if(count<wordNum.length-1) {
+				//System.out.printf("%s",myarray);
+				System.out.print(" ");
+				count++;
+			}
+			
+		}
+		System.out.println("\n####################################################\n");
+		
+
+	}//END METHOD
+    
+}//END CLASS
