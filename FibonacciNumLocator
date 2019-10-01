@@ -1,0 +1,31 @@
+import javax.swing.JOptionPane
+import 
+
+public class FibonacciNumLocator {
+
+    public static void main(String[] args) {
+    	
+    	int counter = 0;
+    	String num = JOptionPane.showInputDialog("Enter Number to Locate");
+    	
+    	int number = Integer.parseInt(num);
+    	
+    	int fnum1 = 0;
+    	int fnum2 = 1;
+    	int fnum3 = 0;
+    	int location;
+    	
+    	while(fnum2 < number){
+    		fnum3 = fnum2 + fnum1;
+    		fnum1 = fnum2;	
+    		fnum2 = fnum3;
+    		location = counter;
+    		counter++;
+    	}
+    	
+    	JOptionPane.showMessageDialog(null,number+" is located at "+location, "Fibonacci Number Locator", JOptionPane.PLAIN_MESSAGE);	
+    	
+    }//END MAIN
+    
+    
+}//END CLASS
