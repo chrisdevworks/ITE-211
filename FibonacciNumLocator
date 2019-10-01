@@ -1,31 +1,53 @@
-import javax.swing.JOptionPane
-import 
+import javax.swing.JOptionPane;
 
 public class FibonacciNumLocator {
 
     public static void main(String[] args) {
     	
-    	int counter = 0;
-    	String num = JOptionPane.showInputDialog("Enter Number to Locate");
+    	//INFINITE LOOP
+    	while(true){
     	
-    	int number = Integer.parseInt(num);
-    	
-    	int fnum1 = 0;
-    	int fnum2 = 1;
-    	int fnum3 = 0;
-    	int location;
-    	
-    	while(fnum2 < number){
-    		fnum3 = fnum2 + fnum1;
-    		fnum1 = fnum2;	
-    		fnum2 = fnum3;
-    		location = counter;
-    		counter++;
-    	}
-    	
-    	JOptionPane.showMessageDialog(null,number+" is located at "+location, "Fibonacci Number Locator", JOptionPane.PLAIN_MESSAGE);	
-    	
+	    	int counter = 0; //RESET
+	    	
+	    	//INPUT
+	    	String num = JOptionPane.showInputDialog("Enter Number to Locate");
+	    	
+	    	int number = Integer.parseInt(num);
+	    	
+	    	int fnum1 = 0;
+	    	int fnum2 = 1;
+	    	int fnum3 = 0;
+	    	int loc;
+	    	boolean fiboTrue = false;
+	    	
+	    	//FIBONACCI SERIES
+		    do{
+		    	fnum3 = fnum2 + fnum1;
+		    	fnum1 = fnum2;	
+		   		fnum2 = fnum3;
+		   		loc = counter + 2;
+		   		counter++;
+		   		if(fnum2 == number){
+		   			fiboTrue = true;
+		   		}else{
+		   			fiboTrue = false;
+		   		}
+		   	}while(fnum2 < number);
+		   	
+		   	
+		   	//DISPLAY
+		   	if(number==1){
+		   		JOptionPane.showMessageDialog(null,number + " is located at 1 and 2", "Fibonacci Number Locator", JOptionPane.PLAIN_MESSAGE);
+		   	}else if(number == 0){
+		   		JOptionPane.showMessageDialog(null,number + " is located at 0", "Fibonacci Number Locator", JOptionPane.PLAIN_MESSAGE);
+		   	}else if(fiboTrue == true){
+		   		JOptionPane.showMessageDialog(null,number + " is located at " + loc, "Fibonacci Number Locator", JOptionPane.PLAIN_MESSAGE);
+	    	}else{
+	    		JOptionPane.showMessageDialog(null,"The number is not in the Fibonacci Series!", "Fibonacci Number Locator", JOptionPane.ERROR_MESSAGE);
+	    	}
+	    	
+    	}//END WHILE LOOP
+    		
     }//END MAIN
-    
     
 }//END CLASS
