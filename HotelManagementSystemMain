@@ -1,0 +1,16 @@
+package HotelManagement;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class HotelManagementMain {
+
+	public static void main(String[] args) {
+		HotelManagementClass obj = new HotelManagementClass();
+		obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		obj.setSize(800, 500);
+		obj.setVisible(true);
+		
+	}
+
+}
