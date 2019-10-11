@@ -3,13 +3,35 @@ package HotelManagement;
 import java.awt.*;
 import javax.swing.*;
 
-public class HotelManagementMain {
+public class HotelManagementMain{
 
 	public static void main(String[] args) {
-		HotelManagementClass obj = new HotelManagementClass();
-		obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		obj.setSize(800, 500);
-		obj.setVisible(true);
+		//HotelManagementClass obj = new HotelManagementClass();
+		//obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//obj.setSize(800, 500);
+		//obj.setVisible(true);
+		
+		//JPanel panel = new JPanel();
+		//JFrame frame = new JFrame("Chat Frame");
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       // frame.setSize(400, 400);
+       // JLabel label = new JLabel("Enter Text");
+       // panel.add(label);
+        
+        
+		JFrame f= new JFrame("Hotel Management System");  
+	    JLabel l1;  
+	    l1=new JLabel("Check In");  
+	    l1.setBounds(100,100, 100,100);  
+	    f.add(l1);
+	    f.setSize(500,600);  //FRAME
+	    f.setLayout(null);  //
+	    f.setVisible(true);  
+	    
+		//label.setVerticalTextPosition(JLabel.BOTTOM);
+		//label.setHorizontalTextPosition(JLabel.CENTER);
+		//panel.add(label);
+		
 		
 	}
 
