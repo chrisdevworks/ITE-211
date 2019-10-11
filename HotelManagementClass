@@ -1,0 +1,18 @@
+package HotelManagement;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class HotelManagementClass extends JFrame {
+	private JTextField item1;
+	
+	public HotelManagementClass(){
+		super("Hotel Management");
+		setLayout(new FlowLayout());
+		
+		item1 = new JTextField(10);
+		add(item1);
+		
+	}
+
+}
