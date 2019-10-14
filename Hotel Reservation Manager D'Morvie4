@@ -565,7 +565,7 @@ public class HotelReservationGUI extends javax.swing.JFrame {
 
         myTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "First Name", "Last Name", "Title", "Nickname", "Address", "Email", "Contact No.", "Booking ID", "Check In Date", "Check Out Date", "Bed Type", "Floors", "Hours", "Rooms", "Discount", "Deposit", "Extra Charges", "Total", "Delete"
