@@ -692,11 +692,11 @@ public class HotelReservationGUI extends javax.swing.JFrame {
             ContactNumber.setText(null);
             CheckIn.setModel(new javax.swing.SpinnerDateModel());
             CheckOut.setModel(new javax.swing.SpinnerDateModel());
-            BedType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"","Single", "Double", "Queen"}));
+            BedType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Select","Single", "Double", "Queen"}));
             Floors.setModel(new javax.swing.SpinnerNumberModel(1, 1, 4, 1));
             Hours.setModel(new javax.swing.SpinnerNumberModel(12, 12, null, 12));
             Rooms.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-            Discounts.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "none", "Seniors", "Event", "Loyalty" }));
+            Discounts.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "none", "10% - Seniors", "15% - Event", "20% - Loyalty" }));
             Deposit.setText("0.0");
             ExtraCharges.setText("0.0");
             Total.setText("0.0");
